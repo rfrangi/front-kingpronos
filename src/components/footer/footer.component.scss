@@ -1,0 +1,16 @@
+@import "src/css/colors";
+
+div {
+  background: $COLOR_BLACK_LIGHT;
+  display: block;
+  border-top: 1px solid orange;
+
+  mat-icon, a {
+    vertical-align: middle;
+
+    .mentions-legales {
+      position: absolute;
+      right: 20px;
+    }
+  }
+}

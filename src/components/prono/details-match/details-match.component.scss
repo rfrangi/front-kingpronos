@@ -1,0 +1,97 @@
+@import '../../../css/colors';
+.cote, .titre, .equipe, .categorie, .info-match {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-match {
+  color: orange;
+  margin: 0;
+  font-size: 0.8em;
+
+  img {
+    vertical-align: middle;
+    width: 2em;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+.match {
+  display: block;
+  text-align: center;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.block-vs {
+  color: orange;
+  font-size: 2em;
+  margin: 20px 0;
+  position: relative;
+  top: 2px;
+}
+
+.score {
+  color: orange;
+  font-size: 1.8em;
+  font-weight: 700;
+  position: relative;
+  top: -5px;
+  vertical-align: text-top;
+}
+
+.logo-equipe {
+  width: 48px;
+  height: 48px;
+}
+
+.mat-icon {
+  cursor: pointer;
+  color: orange;
+  float: right;
+}
+
+.equipe2 {
+  padding-left: 0;
+}
+
+.equipe1 {
+  padding: 0;
+}
+
+.equipe {
+  font-size: 0.8em;
+  color: orange;
+  text-align: center;
+  width: 29%;
+  vertical-align: top;
+
+  img, span {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    max-width: 8em;
+  }
+}
+
+.info-match {
+  text-align: center;
+  color: white;
+  display: block;
+
+  span {
+    display: block;
+  }
+
+  .titre {
+    vertical-align: top;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: $COLOR_ORANGE_DARK;
+    font-size: 1.5em;
+  }
+}
+

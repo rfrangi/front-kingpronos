@@ -1,0 +1,58 @@
+div.block {
+  background: none;
+  text-align: center;
+
+  mat-card-actions {
+    font-size: 0.9em;
+  }
+
+  div.block.ajouter {
+    background: #242424;
+  }
+
+  mat-card-subtitle, button {
+    color: orange;
+  }
+
+  .mat-card {
+    color: white;
+    display: inline-block;
+    background: #242424;
+    margin-bottom: 1em;
+
+  }
+
+  mat-card-actions, mat-card-content {
+    text-align: center;
+  }
+
+  mat-card-actions {
+    padding: 0;
+  }
+
+  .picto-price {
+    width: 50px;
+    height: 15px;
+    border: 2px solid orange;
+    border-radius: 40px;
+    padding: 27px 10px;
+    display: inline-block;
+  }
+
+  .btn-ajouter {
+    margin: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 951px) {
+
+  div.block {
+    width: auto;
+  }
+
+  mat-card {
+    width: 20em;
+    margin: 0 10px;
+  }
+}
+

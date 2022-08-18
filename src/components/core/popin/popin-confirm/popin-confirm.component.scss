@@ -1,0 +1,20 @@
+@import "../../../../css/colors";
+
+div, h1 {
+  text-align: center;
+  display: block;
+}
+
+h1 {
+  color: $COLOR_ORANGE_DARK;
+}
+
+div.content-popin-confirm {
+  margin-bottom: 1em;
+}
+
+label.mat-form-field-empty span {
+    color: orange;
+}
+
+

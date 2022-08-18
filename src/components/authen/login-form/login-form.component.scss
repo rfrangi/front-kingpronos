@@ -1,0 +1,58 @@
+.link-fb {
+  margin: 1em auto;
+  padding: 0 1em;
+
+  .btn-fb-login {
+    background: #475993;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+
+    .icon-fb {
+      width: 1em;
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 10px;
+      margin: 0;
+    }
+  }
+}
+
+.session {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+}
+
+.version {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2em;
+}
+
+.bloc-login-form {
+
+  max-width: 26em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  padding: 0 15px;
+
+  button[type='submit'] {
+    width: 100%;
+  }
+}
+
+.action-link {
+  padding: 1em 2px;
+
+  .link-forgot-password {
+    float: right;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+.block {
+
+  background: #242424;
+  padding: 1em;
+  margin: 1em 1em 0 1em;
+  text-align: left;
+
+  p {
+    color: white;
+    font-size: 0.9em;
+
+    span {
+      color: orange;
+    }
+  }
+
+  a {
+    font-size: 1em;
+  }
+}

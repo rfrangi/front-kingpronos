@@ -1,0 +1,123 @@
+@import "../../css/colors";
+
+.gestion-abonnement {
+  text-align: center;
+}
+
+.message-vip {
+  color: white;
+  display: block;
+  text-transform: uppercase;
+}
+
+button.btn-add-vip {
+  display: block;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+.mat-card-code-prono {
+  text-align: center;
+}
+
+.btn-add-code-prono {
+    color: orange;
+    border: 1px solid orange;
+}
+
+.picto-vip {
+  width:100px;
+}
+
+div.block {
+    background: #4c4c4c;
+    margin: auto;
+}
+
+.block {
+  background: #242424;
+  margin: 1em 0;
+}
+
+.mes-informations {
+  display: inline-block;
+}
+
+.col1,
+.col2,
+.col3 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.col1,
+.col2 {
+  min-width: 22em;
+  max-width: 22em;
+
+  .suivre img {
+    display: inline-block;
+    width: 15%;
+    margin: 1% 5%;
+    cursor: pointer;
+  }
+}
+
+.col3 {
+  width: calc(100% - 44em);
+  min-width: 14em;
+}
+
+.pagination {
+  background: #242424;
+  margin: 1em;
+  padding: 1em;
+  display: block;
+  text-align: center;
+
+  button {
+    border-radius: 5px;
+    border: 1px solid orange;
+    color: orange;
+    background: $COLOR_FONT_DARK;
+    vertical-align: middle;
+    margin: 0 1em;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+}
+
+@media only screen and (min-width: 0) and (max-width: 750px) {
+
+  ul.onglets li {
+    padding: 0.8em 1em;
+    width: 37%;
+    max-width: 9em;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 950px) {
+
+  .col3,
+  .col1 {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 951px) {
+
+  .col3, .col2,.col1 {
+    width: 33%;
+    min-width: 33%;
+    max-width: 33%;
+
+    .suivre img {
+      width: 10%;
+      margin: 1% 7%;
+    }
+  }
+}

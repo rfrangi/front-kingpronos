@@ -1,0 +1,56 @@
+@import './colors.scss';
+
+mat-dialog-container.mat-dialog-container {
+  padding-top: 1em;
+
+  h1 {
+    padding-bottom: 5px;
+    margin: 0;
+    color: $COLOR_ORANGE_DARK;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    text-align: center;
+  }
+
+  form {
+    margin: 0;
+
+    mat-form-field {
+      padding: 0;
+    }
+
+    input[placeholder],
+    [placeholder],
+    *[placeholder],
+    *:disabled,
+    mat-select .mat-select-value span,
+    mat-form-field textarea.mat-input-element {
+      color: $COLOR_ORANGE;
+
+      &:disabled {
+        color: white;
+      }
+    }
+
+    div.mat-dialog-actions {
+
+      button {
+        margin: 0;
+        font-size: 0.8em;
+        width: 8em;
+      }
+
+      button[type="submit"] {
+        color: white;
+        background: $COLOR_ORANGE_DARK;
+      }
+
+      button[type="button"] {
+        color: orange;
+      }
+    }
+
+  }
+
+
+}

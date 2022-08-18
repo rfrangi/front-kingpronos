@@ -1,0 +1,79 @@
+
+.tableau {
+  width: calc(100% - 2em)!important;
+  border-spacing: 0;
+  margin: 0 1em 0 1em;
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:nth-child(even) {
+    background-color: #242424;
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  tbody td {
+    text-align: center;
+    padding: 10px 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: white;
+    font-size: 0.9em;
+
+    mat-icon {
+      margin: 0;
+    }
+  }
+
+  thead th {
+    color: white;
+    cursor: pointer;
+    background: $COLOR_ORANGE_DARK;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+
+    &[sortby] a {
+      padding-right: 10px;
+      color: $COLOR_WHITE;
+      text-decoration: none;
+      background: inline("../../src/assets/icons/picto_tabl_tri.png") no-repeat right center;
+    }
+
+    &[sortby][aria-sort="DESC"] a {
+      background-image: inline("../src/assets/icons/picto_tabl_tri_down.png");
+    }
+
+    &[sortby][aria-sort="ASC"] a {
+      background-image: inline("../assets/icons/picto_tabl_tri_up.png");
+    }
+
+    &:last-child {
+      border-top-right-radius: 5px;
+    }
+
+    &:first-child {
+      border-top-left-radius: 5px;
+    }
+
+    &:hover {
+      color: orange;
+    }
+  }
+}
+
+.no-result {
+  text-align: center;
+  width: calc(100% - 2em);
+  border-spacing: 0;
+  margin: 0 1em 0 1em;
+  background:  #242424;
+  color: orange;
+  padding: 1em 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+

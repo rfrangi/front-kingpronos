@@ -1,0 +1,78 @@
+body, html {
+  height: 100%;
+}
+
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .logo {
+    width: 400px;
+    height: 200px;
+
+    // this way asset gets processed by webpack
+    background: url(./assets/icons/logo_accueil_400x200.png) center center no-repeat;
+  }
+
+  .text-loading {
+    color: lightgrey;
+    font-size: 1em;
+    font-weight: 900;
+    margin-bottom: 5px;
+  }
+}
+
+
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: lightgray;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: lightgray;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: lightgray;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: darkgray;
+  }
+  50%,
+  100% {
+    background-color: whitesmoke;
+  }
+}

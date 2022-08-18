@@ -1,0 +1,103 @@
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $COLOR_ORANGE_LIGHT;
+  font-size: 0.8em;
+
+  &:hover {
+    font-weight: 300;
+    color:  #d84315;
+  }
+
+  mat-icon {
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+}
+
+.logo-user {
+  width: 5em;
+  height: 5em;
+  border: 2px solid orange;
+  border-radius: 75px;
+}
+
+.logo-default {
+  padding: 10px;
+  width: 3em;
+  height: 3em;
+}
+
+div.mat-card-header-text {
+  margin-left: 0;
+}
+
+.mat-tab-labels {
+  display: block;
+
+}
+
+div.mat-tab-label {
+  width: 20%;
+  opacity: unset;
+}
+
+h4 {
+  color: $COLOR_ORANGE_LIGHT;
+  text-align: center;
+}
+
+h3 {
+  color: orange;
+  text-align: left;
+  margin-top: 0;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 500;
+  color: #d84315;
+  text-transform: uppercase;
+}
+
+.abo-description {
+  font-style: italic;
+  color: lightgray;
+  text-align: center;
+  font-weight: 600;
+}
+
+label {
+  color: $COLOR_GRAY_DARK;
+  margin: 0 3px 3px 0;
+}
+
+.errors {
+  color: $COLOR_ERROR;
+  font-size: 0.9em;
+}
+
+.block {
+  background: #242424;;
+  margin: 1em 1em 0 1em;
+}
+
+
+button span.mat-button-wrapper {
+  vertical-align: middle!important;
+}
+
+img.logo-accueil {
+    width: 20em;
+    margin: 1em auto 0 auto;
+    display: block;
+}
+
+p.description-auth {
+  max-width: 28em;
+  color: lightgray;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.8em;
+  margin: 20px auto 25px auto;
+}

@@ -1,0 +1,81 @@
+@import "../../../css/colors";
+
+
+.pagination {
+  display: block;
+  text-align: center;
+  margin: 1em 1em 0 1em;
+  background: $COLOR-BLACK_LIGHT;
+  padding: 1em;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  button {
+    border-radius: 5px;
+    border: 1px solid orange;
+    color: orange;
+    background: $COLOR_FONT_DARK;
+    vertical-align: middle;
+    margin: 0 1em;
+
+    mat-icon {
+      margin: 0;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+}
+
+p {
+  text-align: right;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: #242424;
+  padding: 1em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  .result {
+    padding: 0;
+    vertical-align: middle;
+    color: $COLOR_ORANGE_DARK2;
+    font-size: 0.8em;
+  }
+
+  select {
+    background: inherit;
+    border: none;
+    color: $COLOR_ORANGE_DARK2;
+  }
+
+  mat-icon {
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0 5px;
+
+    &:hover {
+      color: orange;
+    }
+  }
+
+  mat-form-field.mat-form-field  {
+    width: 2em;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+  }
+  mat-select .mat-select-value span {
+    color: #ef6c00;
+  }
+
+  .mat-form-field-wrapper {
+    padding: 0;
+  }
+  span {
+    color: #ef6c00;
+    padding: 0 5px;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+}

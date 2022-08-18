@@ -1,0 +1,79 @@
+span {
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+mat-progress-spinner {
+  display: inline-block !important;
+  height: 20px !important;
+  width: 20px !important;
+  vertical-align: middle !important;
+}
+.section-install-app-iphone .col2 {
+  width: calc(100% - 84px);
+  display: inline-block;
+}
+.section-install-app-iphone div.col2 section {
+    width: calc(100% - 60px);
+}
+
+.btn-valider {
+  margin-left: 5em;
+}
+
+.section-install-app,
+.section-install-app-iphone
+{
+  background: white;
+  padding: 10px 0;
+  display: block;
+  text-align: center;
+
+
+  mat-icon {
+    color: #707070;
+  }
+
+  div, mat-icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    &.col2 {
+
+      margin: 0 0 0 5px;
+
+      img {
+        width: 50px;
+        vertical-align: middle;
+        background: #191616e6;
+        border-radius: 5px;
+      }
+
+      img, section {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      section {
+        text-align: left;
+        padding-left: 10px;
+
+        label {
+          color: #707070;
+          font-weight: 700;
+
+          &.status {
+            color: lightgray;
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+
+  }
+}

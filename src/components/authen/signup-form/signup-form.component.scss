@@ -1,0 +1,32 @@
+.block {
+
+  max-width: 26em;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1em;
+  background: none;
+
+  h2 {
+    color: orange;
+    text-align: center;
+    margin:  0;
+  }
+
+  button[type='submit'] {
+    width: 100%;
+  }
+
+  .action-link {
+    text-align: right;
+    padding: 1em 5px
+  }
+}
+
+
+
+
+
+
+
+

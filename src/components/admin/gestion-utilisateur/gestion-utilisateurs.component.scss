@@ -1,0 +1,74 @@
+@import "../../../css/colors";
+
+
+.block-nb-users {
+  width: calc(50% - 6em + 7px);
+  display: inline-block;
+  padding: 2em;
+  text-align: center;
+  vertical-align: middle;
+
+  span,
+  label {
+    display: block;
+  }
+
+  span {
+    font-weight: bold;
+    color: orange;
+    margin-bottom: 3px;
+  }
+  &.vip {
+    margin-left: 0;
+  }
+}
+
+.td-actions a {
+  display: block;
+}
+
+.user-actif {
+  color: orange;
+}
+
+.user-block {
+  color: darkred;
+}
+
+div.search {
+  background: $COLOR_BLACK_LIGHT;
+  margin: 1em;
+  text-align: center;
+
+  mat-form-field.mat-form-field {
+    padding: 0 20px 0 20px;
+    width: calc(100% - 8em - 40px);
+    display: inline-block;
+  }
+
+  .btn-search {
+    width: 8em;
+    display: inline-block;
+  }
+}
+
+.img-profil {
+  width: 3em;
+  display: inline-block;
+}
+
+
+@media only screen and (min-width: 0) and (max-width: 750px) {
+
+  td span {
+    text-overflow: ellipsis;
+    width: 4em;
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+
+

@@ -1,0 +1,20 @@
+.onglets {
+  margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 0) and (max-width: 750px) {
+
+  ul.onglets li {
+    padding: 0.8em 2em;
+    width: auto;
+
+    span,
+    mat-icon {
+      vertical-align: middle;
+    }
+
+    mat-icon {
+      padding-right: 10px;
+    }
+  }
+}

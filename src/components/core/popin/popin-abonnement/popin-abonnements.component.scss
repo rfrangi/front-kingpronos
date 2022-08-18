@@ -1,0 +1,57 @@
+h2{
+  text-align: center;
+  font-weight: 500;
+  color: #d84315;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+}
+
+div.block {
+  background: #4c4c4c;
+  margin: 0;
+  text-align: center;
+  width: 21em;
+  height: 30em;
+  overflow-y: scroll;
+
+
+  mat-card-actions {
+    font-size: 0.9em;
+  }
+
+  .abo-description {
+    padding-top: 2em;
+  }
+
+
+  div.block.ajouter {
+    background: #242424;
+  }
+
+  mat-card-subtitle, button {
+    color: orange;
+  }
+
+  .mat-card {
+    color: white;
+    display: inline-block;
+    background: #242424;
+    margin: 1em 1em 0.5em 1em;
+  }
+
+  mat-card-actions, mat-card-content {
+    text-align: center;
+  }
+
+  .picto-price {
+    width: 15px;
+    height: 15px;
+    border: 2px solid orange;
+    border-radius: 30px;
+    padding: 20px 10px;
+  }
+
+  .btn-ajouter {
+    margin: 0.5em;
+  }
+}

@@ -1,0 +1,30 @@
+@import './colors.scss';
+
+.mat-snack-bar-container {
+  color: $COLOR_WHITE;
+
+  .mat-button {
+    background-color: $COLOR_ORANGE_DARK2;
+    color: white;
+  }
+}
+
+.mat-snack-bar-container.success-snackbar {
+  background-color: $COLOR_SUCCESS;
+  color: $COLOR_WHITE;
+}
+
+.mat-snack-bar-container.error-snackbar {
+  background-color: $COLOR_ERROR;
+  color: $COLOR_WHITE;
+}
+
+.mat-snack-bar-container.warning-snackbar {
+  background-color: $COLOR_WARNING;
+  color: $COLOR_WHITE;
+}
+
+.mat-snack-bar-container.info-snackbar {
+  background-color: $COLOR_INFO;
+  color: $COLOR_WHITE;
+}

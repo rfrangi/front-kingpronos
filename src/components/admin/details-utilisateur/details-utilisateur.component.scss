@@ -1,0 +1,169 @@
+@import "../../../css/colors";
+
+h3 {
+  text-align: center;
+}
+
+.code-bonus .line span {
+    width: 100%;
+}
+.code-bonus button,
+.info-vip button {
+  margin-top: 5px;
+}
+
+.info-vip {
+  text-align: center;
+
+  .expire-vip-label {
+    display: block;
+    color: orange;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+
+  .form-new-expired-date-vip {
+    margin-top: 10px;
+
+    mat-form-field {
+      padding: 0;
+    }
+
+    button {
+      color: white;
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  img {
+    width: 5em;
+    margin: 0 auto;
+    display: block;
+
+  }
+}
+
+.block {
+  background: $COLOR_BLACK_LIGHT;
+  width: 22em;
+  color: white;
+  text-align: center;
+  margin: 1em auto;
+  padding: 1em;
+
+  &.delete-compte button {
+    background: red;
+    color: white;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  button.btn-add-vip {
+    color: white;
+  }
+
+  .line {
+    display: block;
+    width: 100%;
+    margin: 0.5em 0;
+
+    &.line-slide {
+      margin: 0.9em 0 0.7em 0;
+    }
+
+    .logo {
+      width: 3em;
+      height: 3em;
+      border: 2px solid orange;
+      border-radius: 75px;
+      padding: 10px;
+    }
+
+    mat-icon,
+    label,
+    button,
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    span {
+      width: 6em;
+      padding: 0 4px;
+      color: orange;
+    }
+
+
+    mat-icon {
+      width: 1em;
+      color: orange;
+    }
+
+    button {
+      color: white;
+      margin: 0;
+      font-size: 0.8em;
+      width: 8em;
+    }
+  }
+}
+
+label {
+  color: white;
+  padding: 0 1em;
+  width: calc(100% - 10em);
+  text-align: left;
+  margin: 0;
+}
+
+.action {
+  text-align: center;
+
+  button {
+    margin: 0.5em;
+    width: 7em;
+  }
+}
+
+.profils {
+  padding-bottom: 1px;
+
+  ul {
+    text-align: left;
+    margin-bottom: 0;
+
+    li {
+      display: block;
+      list-style:none;
+    }
+  }
+
+  button {
+    margin: 5px;
+  }
+
+}
+
+@media only screen and (min-width: 951px) {
+
+  .block-larg-screen {
+    text-align: center;
+  }
+
+  .col-2,
+  .info {
+    display: inline-block;
+  }
+
+  .info {
+    display: inline-block;
+    margin: 1em 10px;
+    min-height: 25.5em;
+    vertical-align: top;
+  }
+}

@@ -1,0 +1,83 @@
+@import "src/css/colors";
+
+img {
+  width: 70px;
+}
+
+.btn-add-appli {
+  color: white;
+  position: absolute;
+  background: orange;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 0) and (max-width: 750px) {
+  .nav-bar .text,
+  .title-app {
+      display: none;
+  }
+
+  .title-page {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 751px) {
+
+ .title-page {
+   display: none;
+ }
+}
+
+mat-toolbar-row {
+  background: linear-gradient(to left, $COLOR_FONT_DARK, $COLOR_ORANGE_DARK);
+
+  .icon-menu {
+    position: absolute;
+    right: 20px;
+
+    &.admin {
+      right: 20px;
+    }
+  }
+
+  h1 {
+    margin-left: 20px;
+  }
+}
+
+.nav-bar {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background: #191616e6;
+
+  li {
+    display: inline-block;
+    background: #242424;
+    color: orange;
+    width: 20%;
+    padding: 10px 0;
+    border-bottom: 1px solid $COLOR_FONT_LIGHT;
+
+    mat-icon,
+    span {
+      vertical-align: middle;
+    }
+
+    mat-icon {
+      color: orange;
+    }
+
+    span {
+      padding-left: 10px;
+    }
+
+    &:hover,
+    &.isActive {
+      border-bottom: 2px solid orange;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../../css/colors";
+
+mat-dialog-container {
+  width: 33%;
+}
+
+div.search,
+div.ajouter {
+
+  margin: 1em;
+  text-align: center;
+
+  ul {
+    li {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px;
+      border: 1px solid orange;
+      border-radius: 10px;
+      color: white;
+    }
+  }
+
+  mat-form-field.mat-form-field {
+    padding: 0 20px 0 20px;
+    width: calc(100% - 10em - 40px);
+    display: inline-block;
+  }
+
+  .btn-action {
+    display: inline-block;
+    margin: 0 5px;
+
+    mat-icon {
+      margin: 0;
+    }
+
+    &.btn-search {
+      background: #d84315;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+}
+
+.block {
+  background: #242424;
+  margin: 1em 1em 0 1em;
+}
+
+
+.td-actions a {
+  display: block;
+}
+
+pagination-control .pagination {
+  margin: 1em 1em 0 1em;
+}

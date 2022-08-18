@@ -1,0 +1,132 @@
+@import "../../../css/colors";
+
+.block {
+  background: $COLOR_BLACK_LIGHT;
+  margin: 1em auto;
+  padding: 1em;
+
+  &.block-upload {
+    text-align: center;
+
+    img {
+      max-width: 23em;
+      margin-top: 1em;
+    }
+  }
+
+  &.block-form-privacy,
+  &.block-form-description {
+    padding-bottom: 0;
+    padding-top: 0.5em;
+
+    mat-form-field {
+      padding-bottom: 0;
+    }
+  }
+
+  &.block-form-description {
+    padding-bottom: 0.5em;
+  }
+
+  &.info-gain {
+
+    .input-30 {
+      width: 29%;
+      vertical-align: bottom;
+      margin-left: 1em;
+    }
+
+    .div-middle {
+      display: inline-block;
+      width: 26%;
+      padding: 0 10px;
+      text-align: center;
+
+      label {
+        color: orange;
+        margin-bottom: 5px;
+      }
+
+      .cote-total {
+        color: white;
+        display: block;
+        width: 2em;
+        border: 1px solid orange;
+        padding: 20px 13px;
+        margin: 10px auto 0 auto;
+        text-align: center;
+        border-radius: 30px;
+      }
+    }
+
+    .div-right {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+      vertical-align: top;
+
+      label {
+        display: block;
+        color: orange;
+        padding: 0 0 5px 0;
+
+        &.label-gain {
+          padding-top: 5px;
+        }
+      }
+
+      .bankroll {
+        color: white;
+      }
+
+      .gain {
+        color: green;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .link-add-match {
+    text-align: center;
+    display: block;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: block;
+    background: #242424;
+    margin: 1em auto;
+    padding: 1em;
+  }
+}
+
+.prono-description {
+  font-size: 0.9em;
+  color: lightgrey;
+}
+
+.action {
+  text-align: center;
+  margin: 1em auto;
+  width: 20em;
+
+  button {
+    width: 10em;
+  }
+
+  button + button  {
+    margin-left: 10px;
+  }
+}
+
+.mat-checkbox{
+  margin-bottom: 1em;
+}
+
+.span-white {
+  color: orange;
+}

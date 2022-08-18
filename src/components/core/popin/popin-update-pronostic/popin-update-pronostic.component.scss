@@ -1,0 +1,57 @@
+@import "../../../../css/colors";
+
+
+.mat-dialog-content {
+  padding: 0;
+}
+
+mat-radio-button {
+  display: block;
+  padding-left: 15px;
+}
+
+h3 {
+  padding-top: 5px;
+}
+
+.match {
+
+  display: block;
+  text-align: center;
+
+  .equipe span {
+    font-size: 0.8em;
+    color: orange;
+    text-align: center;
+    padding-bottom: 5px;
+    max-width: 8em;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  span.block-vs {
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    color: orangered;
+  }
+
+  mat-form-field {
+    width: 2em;
+    display: inline-block;
+    text-align: center;
+    color: orangered;
+    margin: 0 5px;
+  }
+
+  img {
+    width: 50px;
+    vertical-align: middle;
+    margin: 5px;
+  }
+
+  .error {
+    position: inherit;
+  }
+}

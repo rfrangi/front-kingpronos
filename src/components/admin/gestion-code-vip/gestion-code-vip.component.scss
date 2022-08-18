@@ -1,0 +1,44 @@
+.th-action {
+  width: 2em;
+}
+
+div.block {
+    text-align: center;
+}
+
+div.block.ajouter {
+  background: #242424;
+}
+
+div.ajouter {
+
+  margin: 1em;
+  text-align: center;
+
+  mat-form-field.mat-form-field {
+    padding: 0 20px 0 20px;
+    width: calc(100% - 10em - 40px);
+    display: inline-block;
+  }
+
+  .btn-action {
+    display: inline-block;
+    margin: 0 5px;
+
+    mat-icon {
+      margin: 0;
+    }
+
+    &.btn-search {
+      background: #d84315;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  div.pagination {
+    margin: 0!important;
+  }
+}

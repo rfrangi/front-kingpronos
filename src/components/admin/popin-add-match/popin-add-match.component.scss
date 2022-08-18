@@ -1,0 +1,35 @@
+.input-50 {
+  width: 48%;
+  display: inline-block;
+
+  &.first-input {
+    margin-right: 15px;
+  }
+}
+
+img {
+  width: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.action {
+  display: block;
+  text-align: center;
+}
+
+@media only screen and (min-width: 0) and (max-width: 750px) {
+
+  .input-50 {
+    width: 100%;
+    display: block;
+
+    &.first-input {
+      margin-right: 0;
+    }
+  }
+}
+
+form {
+  padding: 0;
+}

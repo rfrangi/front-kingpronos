@@ -1,0 +1,132 @@
+form {
+  max-width: 26em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  padding: 0 15px;
+}
+
+mat-label {
+  color: orange;
+}
+
+.mat-input-element:disabled {
+  color: lightgrey!important;
+}
+button.btn-add-vip,
+button.valider {
+  display: block;
+  color: white;
+  background: $COLOR_ORANGE_DARK;
+  margin: 1em auto 0 auto;
+
+
+  &[disabled] {
+    color: white!important;
+    background: #4c4c4c;
+  }
+}
+
+input {
+  cursor: pointer;
+  margin: 5px;
+  color: white!important;
+}
+
+mat-dialog-container input {
+  color: orangered!important;
+}
+
+input[placeholder],
+[placeholder],
+*[placeholder],
+*:disabled,
+mat-select .mat-select-value span,
+mat-form-field textarea.mat-input-element {
+  color: white;
+
+  &:disabled {
+    color: white;
+  }
+}
+
+.mat-input-underline {
+  background-color: white;
+}
+
+label.mat-form-field-label span {
+  color: orange;
+}
+
+input:focus label.mat-form-field-empty span {
+  color: $COLOR_ORANGE_DARK;
+}
+
+button {
+  cursor: pointer;
+  padding: 0 2em;
+
+  mat-icon {
+    margin: -5px 5px 0 -5px;
+  }
+
+  &:hover {
+      background: rgba(255, 255, 255, 0.12);
+  }
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: $COLOR_ORANGE_DARK;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline:hover {
+  background-color: orange;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: orange;
+}
+
+.action .mat-stroked-button.mat-warn  {
+  border: 1px solid orange;
+}
+
+mat-form-field {
+  padding: 0 0 0.5em 0;
+  width: 100%;
+}
+
+mat-radio-button {
+  margin: 5px;
+}
+
+mat-action-row {
+  padding: 16px;
+}
+
+div .mat-datepicker-toggle {
+  color: $COLOR_ORANGE_DARK;
+}
+
+mat-error.mat-error {
+  color: $COLOR_ERROR;
+}
+
+.hide-validation-errors {
+
+  .error {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    font-size: 75%;
+    color: $COLOR_ERROR;
+    margin-top: 1em;
+  }
+
+  .error.always-visible,
+  &.show-required-errors .error.required,
+  &.show-format-errors .error.format {
+    display: block;
+  }
+}

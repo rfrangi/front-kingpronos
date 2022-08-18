@@ -1,0 +1,202 @@
+@import '../../../css/colors';
+
+button.valider {
+  color: white;
+  font-size: 0.9em;
+}
+
+mat-card-content {
+  margin-bottom: 0!important;
+}
+
+.div-image {
+
+  text-align: center;
+
+  .image-prono {
+    width: 100%;
+    max-width: 22em;
+    text-align: center;
+  }
+}
+
+.header-pronostic {
+
+  margin-bottom: 15px;
+
+  .img-cat {
+    margin-right: 5px;
+    width: 20px;
+  }
+
+  .img-cat,
+  .date-debut,
+  .block-cat-date,
+  .btn-action-header,
+  .privacy-prono {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .block-cat-date {
+    width: 18em;
+    display: inline-block;
+    margin-top: 5px;
+    vertical-align: middle;
+  }
+
+  .icon-fun {
+    vertical-align: middle;
+    color: orange;
+    font-size: 0.9em;
+    margin-left: 5px;
+  }
+
+  .btn-action-header {
+    width: calc(100% - 18em);
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+
+    button {
+      width: auto;
+
+      mat-icon {
+        margin-right: 0;
+        margin-top: 0;
+      }
+    }
+
+    span.mat-button-wrapper {
+      vertical-align: middle!important;
+    }
+  }
+
+  .date-debut,
+  .privacy-prono {
+    color: orange;
+    font-size: 0.8em;
+  }
+  .privacy-prono {
+    margin-left: 3px;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-weight: 500;
+  color: $COLOR_ORANGE_DARK;
+  margin-bottom: 10px;
+}
+
+.block {
+  background: $COLOR_BLACK_LIGHT;
+  margin: 1em 1em 0 1em;
+  padding-top: 0.5em;
+
+  div.block {
+    background: $COLOR_FONT_LIGHT;
+    margin: auto;
+    width: 20em;
+  }
+
+  mat-card-actions button {
+    font-size: 14px;
+  }
+}
+
+.prono-description {
+  font-size: 0.9em;
+  color: lightgrey;
+}
+
+mat-card-subtitle, button {
+  color: orange;
+}
+
+.mat-card {
+  color: white;
+}
+
+.block-prono {
+  text-align: center;
+  margin: 10px;
+}
+
+.no-vip {
+
+  text-align: center;
+
+  .title {
+    color: orange;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-top: 5px;
+  }
+
+  mat-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0 15px 0;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  button.btn-add-vip {
+    color: white;
+  }
+
+  span {
+    font-size: 0.8em;
+
+    &.title-prono-cache {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.div-plus-prono {
+
+  margin: 1em auto;
+  text-align: center;
+  border: 1px solid orange;
+  padding: 1em;
+  color: orange;
+  width: 21em;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.list-prono-empty {
+  text-align: center;
+  color: white;
+  margin: 1em;
+}
+
+.details-gain {
+  text-align: center;
+  color: lightslategrey;
+}
+
+.test {
+  text-align: center;
+  color:darkgrey;
+}
+
+
+.chat {
+  max-width: 23em;
+  margin: 1em auto 0 auto;
+}

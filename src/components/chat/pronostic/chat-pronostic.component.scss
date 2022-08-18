@@ -1,0 +1,81 @@
+
+div.block {
+  max-width: 23em;
+  margin: 1em auto 0 auto;
+  padding: 16px;
+
+  h3 {
+    text-align: center;
+  }
+
+  .no-com {
+    display: block;
+    color: lightgray;
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  &.ajouter {
+    padding-top: 5px;
+  }
+
+  &.chat {
+    max-height: 15em;
+    overflow: auto;
+    margin-top: 0;
+  }
+
+  textarea {
+    background: #242424;
+    margin: 1em auto;
+    padding: 1em;
+    border-color: #242424;
+    color: lightgray;
+    width: calc(100% - 2em);
+  }
+
+  div.commentaire {
+    margin: 0.5em 0;
+    background: #2f2c2c;
+    padding: 10px 5px;
+    border-radius: 10px;
+
+    img {
+      width: 3em;
+      vertical-align: top;
+      display: inline-block;
+      border-radius: 25px;
+    }
+
+    .content-message {
+      display: inline-block;
+      width: calc(100% - 6em);
+      margin-left: 0.5em;
+
+      .pseudonyme {
+        color: orange;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .message {
+        display: block;
+        color: lightgray;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  button {
+    color: white;
+  }
+}
+
+
+
+@media only screen and (min-width: 0) and (max-width: 750px) {
+
+
+}
+
+

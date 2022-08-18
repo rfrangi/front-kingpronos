@@ -1,0 +1,46 @@
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+  background: #242424;
+}
+.block {
+  background: #242424;
+  width: 20em;
+  color: white;
+  text-align: center;
+  margin: 1em auto;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  mat-expansion-panel-header mat-icon {
+    color: orange;
+  }
+
+  .img-bookmaker {
+    width: 10em;
+  }
+  p {
+
+    display: block;
+
+    img {
+      width: 30px;
+      margin-right: 15px;
+    }
+
+    mat-form-field {
+      display: inline-block;
+      vertical-align: middle;
+      width: calc(100% - 45px);
+    }
+  }
+}
+
+.action {
+  text-align: center;
+  margin: 1em auto;
+  padding-top: 0;
+}
+
+mat-panel-title {
+  color: orange;
+  font-size: 1.2em;
+}
