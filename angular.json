@@ -28,19 +28,25 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/styles-app-loading.scss",
+              "src/theme.scss",
+              "src/css/fonts.scss"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json",
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "1000kb",
                   "maximumError": "1mb"
                 },
                 {
@@ -99,7 +105,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/styles-app-loading.scss",
+              "src/theme.scss",
+              "src/css/fonts.scss"
             ],
             "scripts": []
           }
@@ -107,5 +116,8 @@
       }
     }
   },
-  "defaultProject": "kingpronos"
+  "defaultProject": "kingpronos",
+  "cli": {
+    "analytics": false
+  }
 }
