@@ -18,7 +18,7 @@ import { Platform } from '@angular/cdk/platform';
       <div class="col2">
         <img src="assets/icons/logo-transparent.png" alt="logo-install"/>
         <section>
-            <label>King Pronos</label>
+            <label>Costello Pronos</label>
             <br/>
             <label class="status">
               {{ getPWADisplayMode() === 'browser' && !deferredPrompt ? 'Installée' : 'Non installée'}}
@@ -38,7 +38,7 @@ import { Platform } from '@angular/cdk/platform';
       <div class="col2">
         <img src="assets/icons/logo-transparent.png" alt="logo-install"/>
         <section>
-          <label>Installer King Pronos</label>
+          <label>Installer Costello Pronos</label>
           <br/>
           <label class="status">
             Appuyez sur le "Menu",<br/>
