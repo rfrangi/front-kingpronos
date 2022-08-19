@@ -28,7 +28,21 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
     class="saisie-form hide-validation-errors"
     (submit)="isFormValid() && submit()"
     *ngIf="pronostic">
-
+  <div class="block">
+    <mat-form-field class="input-50 first-input">
+      <input matInput
+             [matDatepicker]="dateDebutPicker"
+             placeholder=" Date de création"
+             readonly
+             required
+             #debutDate="ngModel"
+             (focus)="dateDebutPicker.open()"
+             [(ngModel)]="pronostic.creationDate"
+             name="dateDebutPicker">
+      <mat-datepicker-toggle matSuffix [for]="dateDebutPicker" color="accent"></mat-datepicker-toggle>
+      <mat-datepicker #dateDebutPicker color="accent"></mat-datepicker>
+    </mat-form-field>
+  </div>
   <ul>
     <li *ngFor="let match of pronostic.matchs">
       <details-match
@@ -45,11 +59,13 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
       Ajouter un {{ this.pronostic.matchs.length > 0 ? 'autre ' : ''}}match
     </a>
   </div>
-  <div class="block info-gain" *ngIf="pronostic.matchs.length > 0">
-    <mat-form-field class="input-30">
+  <div class="d-flex flex-column bg-dark p-3" *ngIf="pronostic.matchs.length > 0">
+    <div class="d-flex flex-row me-2">
+      <mat-form-field class="input-30 flex-grow-1">
       <input matInput
              placeholder="Mise en %"
              [(ngModel)]="pronostic.mise"
+             (input)="changeMisePourCentage()"
              #mise="ngModel"
              maxlength="3"
              name="mise"
@@ -58,25 +74,38 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
             <p class="error required"
                        *ngIf="mise.errors?.['required']">
               La mise est obligatoire
-        </p>
+             </p>
             <p class="error format"
                        *ngIf="mise.errors?.['maxLength']">
               La mise est trop importante
             </p>
-    </mat-form-field>
-    <div class="div-middle">
-      <label>Cote total</label>
-      <span class="cote-total">{{pronostic.calculCoteTotal}}</span>
+      </mat-form-field>
+      <mat-form-field class="input-30 px-2">
+        <input matInput
+               placeholder="Mise en €"
+               [(ngModel)]="miseEuro"
+               disabled
+               maxlength="3"
+               name="miseEuro"
+               required
+               type="number">
+      </mat-form-field>
     </div>
-    <div class="div-right">
-      <label class="label-bankroll">Bankroll</label>
-      <span class="bankroll">{{pronostic.bankroll}} €</span>
-      <label class="label-gain">Bénéfice</label>
-      <span class="gain"> + {{gain}} €</span>
+    <div class="d-flex flex-row text-center  flex-grow-1 align-items-center justify-content-center flex-fill">
+      <div class="d-flex flex-column text-center me-4">
+        <label class="text-secondary">Cote&nbsp;total</label>
+        <span class="cote-total rounded-circle border border-secondary text-white py-3">{{pronostic.calculCoteTotal}}</span>
+      </div>
+      <div class="d-flex flex-column mx-3">
+        <label class="text-secondary">Bankroll</label>
+        <span class="bankroll text-white">{{pronostic.bankroll}} €</span>
+        <label class="text-secondary">Bénéfice</label>
+        <span class="gain text-success "> + {{gain}} €</span>
+      </div>
     </div>
   </div>
-  <div class="block block-form-privacy">
-    <div class="line">
+  <div div class="d-flex flex-column my-3 p-3 bg-dark">
+    <div class="line ">
       <mat-form-field>
         <mat-select placeholder="Type"
                     [(ngModel)]="pronostic.privacy"
@@ -162,6 +191,7 @@ export class DetailsPronosticComponent implements OnInit {
   public url!: any;
   public LIST_PRIVACY = LIST_PRIVACY;
   private file!: File;
+  miseEuro: any;
 
   constructor(private router: Router,
               private toast: ToastService,
@@ -230,6 +260,7 @@ export class DetailsPronosticComponent implements OnInit {
       ).subscribe(
         ([pronostic, globalParams]) => {
           this.pronostic = pronostic;
+          this.changeMisePourCentage();
           this.globalParams = globalParams;
         },
         err => this.toast.genericError(err),
@@ -292,5 +323,10 @@ export class DetailsPronosticComponent implements OnInit {
     return this.pronostic.mise ?
       ((this.pronostic.bankroll * (this.pronostic.mise / 100) * this.pronostic.calculCoteTotal)
         - (this.pronostic.bankroll * (this.pronostic.mise / 100))).toFixed(2) : 0;
+  }
+
+
+  public changeMisePourCentage() {
+    this.miseEuro = this.pronostic.mise * this.pronostic.bankroll / 100;
   }
 }

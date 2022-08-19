@@ -87,7 +87,7 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
         <strong *ngIf="prono.status != LIST_STATUS.CANCEL">{{prono.gain}} €</strong>
       </span>
     </div>
-    <p class="prono-description" *ngIf="tokenStorage.getUser()?.hasVIPValid()">
+    <p class="prono-description my-2" *ngIf="tokenStorage.getUser()?.hasVIPValid()">
         {{prono?.description}}
     </p>
     <div class="div-image">

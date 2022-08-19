@@ -46,6 +46,7 @@ import {PopinUpdatePronosticComponent} from '../components/core/popin/popin-upda
 
 import {authInterceptorProviders } from '../providers/auth.interceptor';
 import {SharedModule} from './shared/shared.module';
+import {DetailsBookmakerComponent} from "../components/bookmaker/details-bookmaker/details-bookmaker.component";
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import {SharedModule} from './shared/shared.module';
     ListBookmakerComponent,
     MentionsLegalesComponent,
     GestionSupportComponent,
-    AidesComponent
+    AidesComponent,
   ],
   imports: [
     NgxPayPalModule,
@@ -95,7 +96,9 @@ import {SharedModule} from './shared/shared.module';
     PopinPronosticComponent,
     PopinUpdatePronosticComponent
   ],
-  exports: [],
+  exports: [
+    DetailsBookmakerComponent
+  ],
   providers: [
     authInterceptorProviders,
     ToastService,

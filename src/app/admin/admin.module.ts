@@ -21,6 +21,21 @@ import {DetailsUtilisateurComponent} from '../../components/admin/details-utilis
 import {GestionPronosticsComponent} from '../../components/admin/gestion-pronostics/gestion-pronostics.component';
 import {DetailsPronosticComponent} from '../../components/admin/details-pronostic/details-pronostic.component';
 import {PopinAddMatchComponent} from '../../components/admin/popin-add-match/popin-add-match.component';
+import {
+  GestionBookmakerComponent
+} from "../../components/admin/gestion-parametres/gestion-bookmakers/gestion-bookmakers.component";
+import {
+  PopinDetailsBookmakerComponent
+} from "../../components/admin/gestion-parametres/gestion-bookmakers/popin-details-bookmaker/popin-details-bookmaker.component";
+import {
+  GestionContactsComponent
+} from "../../components/admin/gestion-parametres/gestion-contacts/gestion-contacts.component";
+import {
+  GestionReseauxComponent
+} from "../../components/admin/gestion-parametres/gestion-reseaux/gestion-reseaux.component";
+import {
+  GestionBankrollComponent
+} from "../../components/admin/gestion-parametres/gestion-bankroll/gestion-bankroll.component";
 
 @NgModule({
   declarations: [
@@ -30,9 +45,14 @@ import {PopinAddMatchComponent} from '../../components/admin/popin-add-match/pop
     GestionAbonnementComponent,
     GestionUtilisateursComponent, DetailsUtilisateurComponent,
     GestionPronosticsComponent, DetailsPronosticComponent,
+    GestionContactsComponent,
     PopinCrudCodeVipComponent,
     PopinCrudAbonnementComponent,
     PopinAddMatchComponent,
+    GestionBookmakerComponent,
+    PopinDetailsBookmakerComponent,
+    GestionReseauxComponent,
+    GestionBankrollComponent
 
   ],
   entryComponents: [

@@ -41,6 +41,7 @@ import {ListAbonnementComponent} from '../../components/shared/list-abonnement/l
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { GoogleChartsModule } from 'angular-google-charts';
+import {DetailsBookmakerComponent} from "../../components/bookmaker/details-bookmaker/details-bookmaker.component";
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
     DetailsMatchComponent,
     GestionBilanComponent,
     ListAbonnementComponent,
+    DetailsBookmakerComponent,
     DatePipe
   ],
   entryComponents: [ PopinPseudonymeComponent ],
@@ -62,6 +64,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
     PaginationControlComponent,
     FileBase64Component,
     ListPronoComponent,
+    DetailsBookmakerComponent,
     ReseauxSociauxComponent,
     DatePipe,
     FormsModule,

@@ -1,8 +1,8 @@
 a {
   cursor: pointer;
-  text-decoration: none;
-  color: $COLOR_ORANGE_LIGHT;
-  font-size: 0.8em;
+  text-decoration: none!important;
+  color: $COLOR_ORANGE_LIGHT!important;
+  font-size: 0.9em;
 
   &:hover {
     font-weight: 300;

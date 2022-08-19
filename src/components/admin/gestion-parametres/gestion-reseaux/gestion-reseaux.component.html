@@ -1,0 +1,39 @@
+<form [formGroup]="groupForm"  *ngIf="globalParams" class="bg-dark d-flex flex-column mt-0 p-3">
+<p class="d-flex flex-sm-row flex-column align-items-center m-2">
+      <img src="assets/icons/snapchat.svg" alt="snapchat" matTooltip="Snapchat" class="m-2"/>
+      <mat-form-field class="flex-grow-1 ms-2">
+        <mat-label>URL Snapchat</mat-label>
+        <input matInput formControlName="urlSnapchat">
+      </mat-form-field>
+    </p>
+    <p class="d-flex flex-sm-row flex-column align-items-center m-2">
+      <img src="assets/icons/telegram.svg" alt="telegram" matTooltip="Telegram" class="m-2"/>
+      <mat-form-field class="flex-grow-1 ms-2">
+        <mat-label>URL Telegram</mat-label>
+        <input matInput formControlName="urlTelegram">
+      </mat-form-field>
+    </p>
+    <p class="d-flex flex-sm-row flex-column align-items-center m-2">
+      <img src="assets/icons/instagram.svg" alt="instagram" matTooltip="Instagram" class="m-2"/>
+      <mat-form-field class="flex-grow-1 ms-2">
+        <mat-label>URL Instagram</mat-label>
+        <input matInput formControlName="urlInstagram">
+      </mat-form-field>
+    </p>
+    <p class="d-flex flex-sm-row flex-column align-items-center m-2">
+      <img src="assets/icons/facebook.svg" alt="facebook" matTooltip="Facebook" class="m-2"/>
+      <mat-form-field class="flex-grow-1 ms-2">
+        <mat-label>URL Facebook</mat-label>
+        <input matInput formControlName="urlFacebook">
+      </mat-form-field>
+    </p>
+  </form>
+  <div class="action text-center m-3">
+    <button mat-flat-button
+            color="accent"
+            (click)="onSubmit()"
+            name="btn-valider"
+            type="submit">
+      Enregistrer
+    </button>
+  </div>

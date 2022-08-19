@@ -1,0 +1,20 @@
+<form [formGroup]="groupForm"  *ngIf="globalParams" class="bg-dark d-flex flex-column mt-0 p-3">
+
+<mat-form-field>
+      <mat-label>Bankroll de départ</mat-label>
+      <input matInput formControlName="bankrollDepart" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Bankroll courante</mat-label>
+      <input matInput formControlName="bankrollCurrent">
+    </mat-form-field>
+</form>
+<div class="action text-center my-3">
+  <button mat-flat-button
+          color="accent"
+          (click)="onSubmit()"
+          name="btn-valider"
+          type="submit">
+    Enregistrer
+  </button>
+</div>

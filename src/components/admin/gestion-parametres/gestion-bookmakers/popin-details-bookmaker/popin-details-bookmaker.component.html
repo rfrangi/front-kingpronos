@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{data.bookmaker.id ? 'Modifier' : 'Ajouter'}}</h1>
+<form [formGroup]="bookmakerForm" autocomplete="off" novalidate>
+  <mat-form-field>
+    <input matInput  placeholder="Nom" formControlName="name" required>
+    <mat-error *ngIf="hasError('name', 'required')">Nom obligatoire</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput  placeholder="URL du logo" formControlName="urlLogo" required>
+    <mat-error *ngIf="hasError('urlLogo', 'required')">L'URL est obligatoire</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput  placeholder="URL du book" formControlName="url" required>
+    <mat-error *ngIf="hasError('url', 'required')">L'URL est obligatoire</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Description" formControlName="description" required>
+    <mat-error *ngIf="hasError('description', 'required')">Description est obligatoire</mat-error>
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button
+            name="btn-cancel"
+            type="button"
+            (click)="cancel()"
+            class="btn-back">
+      Annuler
+    </button>
+    <button mat-raised-button
+            color="primary"
+            name="btn-valider"
+            type="submit"
+            (click)="submit()">
+      Enregistrer
+    </button>
+  </div>
+</form>

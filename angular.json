@@ -32,6 +32,7 @@
               "src/manifest.json"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss",
               "src/styles-app-loading.scss",
               "src/theme.scss",
