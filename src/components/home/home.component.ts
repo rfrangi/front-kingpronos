@@ -60,8 +60,7 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
             name="btn-go-to-abo"
             (click)="goToAbonnements()"
             *ngIf="!tokenStorageService?.getUser()?.hasProfilVIP()">
-      Deve
-      nir VIP
+      Deve nir VIP
     </button>
   </mat-card>
   <mat-card class="block mat-card-code-prono" *ngIf="tokenStorageService?.isValid()">
@@ -147,12 +146,19 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  getMessageVIP(): string {
-    if (this.tokenStorageService?.getUser()?.hasVIPValid()) {
-      return `Il vous reste ${dayDiff(dateToday(), startOfDay(this.tokenStorageService?.getUser()?.expiredVIPDate))} jours de VIP`;
-    } else {
-      return `aucun abonnement VIP`;
+  public getMessageVIP(): string {
+    const days = dayDiff(dateToday(), startOfDay(this.tokenStorageService.getUser()?.expiredVIPDate))
+    if (this.tokenStorageService.getUser()?.hasProfilAdmin() || this.tokenStorageService.getUser()?.hasProfilSuperAdmin()) {
+      if (days === 'NaN') {
+        return `Vous êtes VIP à vie`;
+      }
+      return `Il vous reste ${days} jours de VIP`;
     }
+
+    if (this.tokenStorageService.getUser()?.hasVIPValid()) {
+      return `Il vous reste ${days} jours de VIP`;
+    }
+    return `aucun abonnement VIP`;
   }
 
   goToAbonnements(): void {
