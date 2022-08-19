@@ -6,6 +6,7 @@
 @import './css/table.scss';
 @import './css/toast.scss';
 @import './css/popin.scss';
+@import "bootstrap";
 
 * {
   font-family: 'din_mediumregular', Helvetica, Arial, sans-serif;
@@ -17,6 +18,10 @@ body {
   min-height: 100%;
   background: #191616e6;
   font-family: 'din_mediumregular', Helvetica, Arial, sans-serif;
+
+  .pointer {
+    cursor: pointer;
+  }
 }
 
 .tooltip-primary {

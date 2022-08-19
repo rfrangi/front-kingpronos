@@ -1,0 +1,9 @@
+<div>
+  <span (click)="showPopinDetailsBookmaker()" class="bg-dark d-block py-2 w-100 mb-4 text-center text-secondary">Ajouter un book</span>
+  <ng-container *ngFor="let bookmaker of bookmakers">
+    <app-details-bookmaker [bookmaker]="bookmaker"
+                           [isAdmin]="true"
+                           (remove)="removeBookmaker($event)"
+                           (edit)="showPopinDetailsBookmaker($event)"></app-details-bookmaker>
+  </ng-container>
+</div>

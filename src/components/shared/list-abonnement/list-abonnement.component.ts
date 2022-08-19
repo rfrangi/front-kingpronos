@@ -10,7 +10,7 @@ import {Abonnement} from '../../../models/abonnement.model';
     <mat-card *ngFor="let abo of abonnements">
       <mat-card-content>
         <h2>{{abo?.label}}</h2>
-        <span class="picto-price">{{abo?.price}}&nbsp;€</span>
+        <span class="picto-price my-3">{{abo?.price}}&nbsp;€</span>
         <p class="abo-description">{{abo?.description}}</p>
       </mat-card-content>
       <mat-card-actions>

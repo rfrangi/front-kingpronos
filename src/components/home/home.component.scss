@@ -89,15 +89,11 @@ div.block {
       background: rgba(255, 255, 255, 0.12);
     }
   }
+
 }
 
 @media only screen and (min-width: 0) and (max-width: 750px) {
 
-  ul.onglets li {
-    padding: 0.8em 1em;
-    width: 37%;
-    max-width: 9em;
-  }
 }
 
 @media only screen and (min-width: 750px) and (max-width: 950px) {

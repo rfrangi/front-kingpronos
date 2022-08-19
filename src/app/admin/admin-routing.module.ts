@@ -6,7 +6,6 @@ import {LIST_PROFIL} from '../../models/profil.model';
 import {AuthGuard} from '../../services/guard/auth';
 import {ProfilGuard} from '../../services/guard/profil-guard';
 
-import {GestionParametresComponent} from '../../components/admin/gestion-parametres/gestion-parametres.component';
 import {GestionCodeVipComponent} from '../../components/admin/gestion-code-vip/gestion-code-vip.component';
 import {GestionAbonnementComponent} from '../../components/admin/gestion-abonnement/gestion-abonnement.component';
 import {GestionAdminComponent} from '../../components/admin/gestion-admin/gestion-admin.component';
@@ -14,6 +13,19 @@ import {GestionUtilisateursComponent} from '../../components/admin/gestion-utili
 import {DetailsUtilisateurComponent} from '../../components/admin/details-utilisateur/details-utilisateur.component';
 import {GestionPronosticsComponent} from '../../components/admin/gestion-pronostics/gestion-pronostics.component';
 import {DetailsPronosticComponent} from '../../components/admin/details-pronostic/details-pronostic.component';
+import {GestionParametresComponent} from "../../components/admin/gestion-parametres/gestion-parametres.component";
+import {
+  GestionBookmakerComponent
+} from "../../components/admin/gestion-parametres/gestion-bookmakers/gestion-bookmakers.component";
+import {
+  GestionContactsComponent
+} from "../../components/admin/gestion-parametres/gestion-contacts/gestion-contacts.component";
+import {
+  GestionReseauxComponent
+} from "../../components/admin/gestion-parametres/gestion-reseaux/gestion-reseaux.component";
+import {
+  GestionBankrollComponent
+} from "../../components/admin/gestion-parametres/gestion-bankroll/gestion-bankroll.component";
 
 export const routes: Routes = [
   {
@@ -26,7 +38,29 @@ export const routes: Routes = [
         path: 'parametres',
         data: { profils: [ LIST_PROFIL.SUPER_ADMIN ] },
         canActivate: [ AuthGuard, ProfilGuard ],
-        component: GestionParametresComponent
+        component: GestionParametresComponent,
+        children: [
+          {
+            path: 'bookmakers',
+            data: { profils: [ LIST_PROFIL.SUPER_ADMIN ] },
+            component: GestionBookmakerComponent
+          },
+          {
+            path: 'contacts',
+            data: { profils: [ LIST_PROFIL.SUPER_ADMIN ] },
+            component: GestionContactsComponent
+          },
+          {
+            path: 'reseaux-sociaux',
+            data: { profils: [ LIST_PROFIL.SUPER_ADMIN ] },
+            component: GestionReseauxComponent
+          },
+          {
+            path: 'bankroll',
+            data: { profils: [ LIST_PROFIL.SUPER_ADMIN ] },
+            component: GestionBankrollComponent
+          }
+        ]
       },
       {
         path: 'codeVIP',

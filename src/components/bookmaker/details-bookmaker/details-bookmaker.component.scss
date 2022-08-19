@@ -2,6 +2,10 @@ img {
   width: 9em;
 }
 
+ul.onglets li {
+  width: 6em;
+}
+
 p.no-result {
   margin-top: 1em;
 }
@@ -67,6 +71,8 @@ div.block2 {
   }
 
   .description-auth {
+    margin-left: 10px;
+    margin-right: 10px;
     max-width: 60em;
   }
 }
