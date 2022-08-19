@@ -149,6 +149,7 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
 
   <div class="block block-upload">
     <file-base64
+      class="d-block"
       [lblButton]="getLabelUpload()"
       onclass="add-prono"
       [allowedMimeTypes]="[ 'image/jpeg', 'image/png', 'image/gif' ]"

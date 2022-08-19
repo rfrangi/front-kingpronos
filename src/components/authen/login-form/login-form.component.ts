@@ -15,7 +15,7 @@ import {PopinService} from '../../../services/popin.service';
   template: `
 
     <img src="assets/icons/logo_accueil.png"  class="logo-accueil" alt="logo"/>
-    <p class="description-auth mx-2">Application de pronostics sportifs spécialisée dans le tennis, le football et le basketball</p>
+    <p class="description-auth px-2">Application de pronostics sportifs spécialisée dans le tennis, le football et le basketball</p>
     <div class="bloc-login-form">
       <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="submit(loginForm.value)">
         <mat-form-field>

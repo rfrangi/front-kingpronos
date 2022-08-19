@@ -49,9 +49,9 @@ import {transformDate, getMonthCurrent, getDebutDate, getFinDate} from '../../..
          </mat-form-field>
        </div>
      <div class="block periode" *ngIf="dateSelected">
-         <mat-icon (click)="changePeriode(true)">chevron_left</mat-icon>
+         <mat-icon (click)="changePeriode(true)" class=" w-auto">chevron_left</mat-icon>
          <div>{{ dateSelected | date: 'JANVIER YYYY'}}</div>
-         <mat-icon (click)="changePeriode(false)">chevron_right</mat-icon>
+         <mat-icon (click)="changePeriode(false)" class="w-auto">chevron_right</mat-icon>
        </div>
     </form>
     <div class="block chart" *ngIf="!loading && pronotics.length > 0" (window:resize)="initData()">
