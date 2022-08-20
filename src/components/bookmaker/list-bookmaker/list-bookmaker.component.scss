@@ -31,7 +31,7 @@ div.block2 {
     display: inline-block;
     background: #242424;
     margin: 0.5em 1em;
-    width: 22em;
+    max-width: 22em;
   }
 
   mat-card-actions, mat-card-content {

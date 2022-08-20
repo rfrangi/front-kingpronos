@@ -1,6 +1,6 @@
 {
-  "name": "kingpronos",
-  "version": "3.0.0",
+  "name": "kingpronoss",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -104,7 +104,7 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
     </button>
   </mat-card-content>
   <mat-card-actions [class.center]="isAdmin" *ngIf="tokenStorage.getUser()?.hasProfilSuperAdmin()">
-    <!--<button *ngIf="!isAdmin && !pageChat" mat-button (click)="goToCommentaires(prono)">COMMENTAIRES</button>-->
+    <button *ngIf="!isAdmin && !pageChat" mat-button (click)="goToCommentaires(prono)">COMMENTAIRES</button>
   </mat-card-actions>
   </ng-container>
   <ng-container *ngIf="(prono.privacy === LIST_PRIVACYS.PRIVE && !tokenStorage.getUser()?.hasVIPValid()) && !isAdmin">
