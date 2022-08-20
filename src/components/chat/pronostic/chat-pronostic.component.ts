@@ -19,8 +19,11 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
   selector:  'chat-pronostic',
   styleUrls: ['./chat-pronostic.component.scss'],
   template: `
-    <list-prono [pronostics]="pronostics" [pageChat]="true"></list-prono>
-    <div class="block">
+    <div class="block position-relative">
+      <mat-icon (click)="goToUrl(['home'])"
+                class="border-1 rounded-circle border-secondary text-secondary">
+        keyboard_arrow_left
+      </mat-icon>
       <h3>Commentaires</h3>
       <span *ngIf="commentaires.length === 0" class="no-com">Soyer le premier à commenter ce poste</span>
     </div>
@@ -43,15 +46,17 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
                 placeholder="Ecrire un commentaire">
            </textarea>
         </mat-form-field>
+    </div>
+    <div class="m-3 pb-3">
       <button mat-button
-              (click)="sendMessage()"
-              class="valider"
-              [disabled]="commentaire.length < 1"
-              name="btn-valider"
-              color="primary"
-              type="button">
-            Envoyer
-      </button>
+            (click)="sendMessage()"
+            class="valider text-white mb-3"
+            [disabled]="commentaire.trim().length < 1"
+            name="btn-valider"
+            color="primary"
+            type="button">
+      Envoyer
+    </button>
     </div>
   `,
 })
@@ -87,12 +92,12 @@ export class ChatPronosticComponent  implements OnInit {
       this.idprono = params.idpronostic;
       forkJoin(
         this.chatService.getByIdProno(params.idpronostic, paramsApi),
-        this.pronosticsService.getById(params.idpronostic)
+        //this.pronosticsService.getById(params.idpronostic)
       ).subscribe(
-        ([data, pronostic]) => {
+        ([data]) => {
           this.commentaires = data.result;
           this.pagination = data.pagintation;
-          this.pronostics.push(pronostic);
+         // this.pronostics.push(pronostic);
           this.scrollBlock();
         },
         err => {
@@ -103,10 +108,13 @@ export class ChatPronosticComponent  implements OnInit {
     }
   }
 
-  sendMessage(): void {
+  public goToUrl(urls: Array<string> = []): void {
+    this.router.navigate(urls);
+  }
 
+  public sendMessage(): void {
     const data = {
-      message: this.commentaire,
+      message: this.commentaire.trim(),
       pseudonyme: this.tokenStorage.getUser()?.pseudonyme,
       idUser: this.tokenStorage.getUser()?.id,
       urlPhoto: this.tokenStorage.getUser()?.logo,

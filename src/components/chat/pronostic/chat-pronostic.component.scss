@@ -7,6 +7,21 @@ div.block {
   h3 {
     text-align: center;
   }
+  mat-icon {
+    border: 1px solid;
+    padding-top: 2px;
+    padding-left: 1px;
+    size: 22px;
+    width: 30px;
+    height: 30px;
+    margin-top: 2px;
+    cursor: pointer;
+    position: absolute;
+    left: 25px;
+    &:hover {
+      background: #191919;
+    }
+  }
 
   .no-com {
     display: block;
@@ -49,8 +64,10 @@ div.block {
 
     .content-message {
       display: inline-block;
-      width: calc(100% - 6em);
+      width: calc(100% - 4em);
       margin-left: 0.5em;
+      word-wrap: break-word;
+
 
       .pseudonyme {
         color: orange;
