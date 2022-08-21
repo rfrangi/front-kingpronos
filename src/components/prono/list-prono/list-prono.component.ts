@@ -37,7 +37,7 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
     </div>
     <div class="btn-action-header">
       <button
-        *ngIf="isAdmin && (prono.status === LIST_STATUS.IN_PROGRESS || tokenStorage.getUser()?.hasProfilSuperAdmin())"
+        *ngIf="isAdmin && (prono.status === LIST_STATUS.IN_PROGRESS || tokenStorage.getUser()?.hasProfilSuperAdmin() || tokenStorage.getUser()?.hasProfilAdmin())"
             mat-icon-button
             name="btn-menu"
             [matMenuTriggerFor]="menu">
@@ -48,14 +48,14 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
         <button mat-menu-item
                 name="btn-update"
                 (click)="goToUpdate(prono)"
-                *ngIf="prono.status === LIST_STATUS.IN_PROGRESS || tokenStorage.getUser()?.hasProfilSuperAdmin()">
+                *ngIf="prono.status === LIST_STATUS.IN_PROGRESS || tokenStorage.getUser()?.hasProfilAdmin() || tokenStorage.getUser()?.hasProfilSuperAdmin()">
           <mat-icon color="primary">build</mat-icon>
           <span>Modifier</span>
         </button>
         <button mat-menu-item
                 name="btn-update-status"
                 (click)="showPopinUpdateProno(prono)"
-                *ngIf="(prono.status === LIST_STATUS.IN_PROGRESS && prono.matchs.length > 0 && tokenStorage.getUser()?.hasProfilAdmin())">
+                *ngIf="((prono.status === LIST_STATUS.IN_PROGRESS && prono.matchs.length > 0) || (tokenStorage.getUser()?.hasProfilAdmin() || tokenStorage.getUser()?.hasProfilAdmin()))">
           <mat-icon color="primary">check</mat-icon>
           <span>Valider</span>
         </button>
