@@ -80,7 +80,7 @@ export interface DialogData {
                   type="button">
             <mat-icon color="accent">today</mat-icon>
           </button>
-          <p class="error required" *ngIf="nbJoursVIP.errors?.['required']">Veuillez saisir un nombre de jours</p>-->
+          <p class="error required" *ngIf="nbJoursVIP.errors?.['required']">Veuillez saisir un nombre de jours</p>
         </mat-form-field>
       </div>
       <div mat-dialog-actions>

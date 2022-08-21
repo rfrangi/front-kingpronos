@@ -113,7 +113,13 @@ h3 {
   }
 }
 
-label {
+.message-vip {
+  color: white;
+  padding: 0 1em;
+  text-align: left;
+  margin: 0;
+}
+label:not(.message-vip) {
   color: white;
   padding: 0 1em;
   width: calc(100% - 10em);
