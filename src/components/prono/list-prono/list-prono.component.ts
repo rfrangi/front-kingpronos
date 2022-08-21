@@ -26,23 +26,25 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
   <ng-container *ngIf="prono.privacy === LIST_PRIVACYS.PUBLIC
   || (prono.privacy === LIST_PRIVACYS.PRIVE && tokenStorage.getUser()?.hasVIPValid())
   || isAdmin">
-  <div class="header-pronostic">
-    <div class="block-cat-date">
+  <div class="header-pronostic position-relative">
+    <div class="block-cat
+    -date">
       <ng-container *ngFor="let cat of prono.getCategories()">
-          <img class="img-cat" [src]="cat.img" [alt]="cat.label"/>
+          <img class="img-cat" [src]="cat.img" [alt]="cat.label" [matTooltip]="cat.label"
+          />
       </ng-container>
       <span class="date-debut" *ngIf="prono.creationDate">{{prono?.creationDate  | date:'DD JANVIER YYYY'}} </span>
       <span class="privacy-prono" *ngIf="tokenStorage.getUser()?.hasProfilAdmin() && isAdmin"> - {{prono.privacy.label}}</span>
       <span class="privacy-prono" *ngIf="prono.fun"> - Pronostic Fun</span>
+      <span class="privacy-prono" *ngIf="prono.matchs.length > 0 && isAdmin && prono.status === LIST_STATUS.IN_PROGRESS"> - {{ prono.status.label}}</span>
     </div>
-    <div class="btn-action-header">
+    <div class="btn-action-header position-absolute end-0 top-0">
       <button
         *ngIf="isAdmin && (prono.status === LIST_STATUS.IN_PROGRESS || tokenStorage.getUser()?.hasProfilSuperAdmin() || tokenStorage.getUser()?.hasProfilAdmin())"
             mat-icon-button
             name="btn-menu"
             [matMenuTriggerFor]="menu">
-        <span *ngIf="prono.matchs.length > 0 && isAdmin && prono.status === LIST_STATUS.IN_PROGRESS">{{ prono.status.label}}</span>
-        <mat-icon color="primary">more_vert</mat-icon>
+        <mat-icon color="primary" class="mx-0">more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item

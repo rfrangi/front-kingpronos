@@ -53,17 +53,13 @@ mat-card-content {
   }
 
   .btn-action-header {
-    width: calc(100% - 16em);
-    text-align: right;
-    display: inline-block;
-    vertical-align: middle;
+
 
     button {
       width: auto;
 
       mat-icon {
-        margin-right: 0;
-        margin-top: 0;
+        width: 40px;
       }
     }
 

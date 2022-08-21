@@ -171,6 +171,6 @@ export class DetailsPronosticComponent implements OnInit {
 
 
   public changeMisePourCentage() {
-    this.miseEuro = this.pronostic.mise * this.pronostic.bankroll / 100;
+    this.miseEuro = Math.round(this.pronostic.mise * this.pronostic.bankroll / 100).toFixed(2);
   }
 }

@@ -9,19 +9,19 @@ import { GlobalParams } from '../../../models/global-params.model';
   <h3 *ngIf="hasTitle">Rejoignez-nous</h3>
   <a *ngIf="globalParams.urlFacebook"
      [href]="globalParams.urlFacebook">
-    <img src="assets/icons/facebook.svg" alt="facebook" matTooltip="Facebook"/>
+    <img src="assets/icons/reseaux/facebook.svg" alt="facebook" matTooltip="Facebook"/>
   </a>
   <a *ngIf="globalParams.urlSnapchat"
      [href]="globalParams.urlSnapchat">
-    <img src="assets/icons/snapchat.svg" alt="snapchat" matTooltip="Snapchat"/>
+    <img src="assets/icons/reseaux/snapchat.svg" alt="snapchat" matTooltip="Snapchat"/>
   </a>
   <a *ngIf="globalParams.urlTelegram"
      [href]="globalParams.urlTelegram">
-    <img src="assets/icons/telegram.svg" alt="telegram" matTooltip="Telegram"/>
+    <img src="assets/icons/reseaux/telegram.svg" alt="telegram" matTooltip="Telegram"/>
   </a>
   <a *ngIf="globalParams.urlTelegram"
      [href]="globalParams.urlTelegram">
-    <img src="assets/icons/instagram.svg" alt="instagram" matTooltip="Instagram"/>
+    <img src="assets/icons/reseaux/instagram.svg" alt="instagram" matTooltip="Instagram"/>
   </a>
 </div>
   `,

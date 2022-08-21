@@ -125,7 +125,7 @@ import {User} from '../../../models/user.model';
       </button>
     </div>
   </div>
-  <div class="col-2">
+  <div class="">
     <div class="block info-vip">
       <h3>Information(s) VIP</h3>
       <div class="blcok-vip" *ngIf="user.hasProfilVIP()">
