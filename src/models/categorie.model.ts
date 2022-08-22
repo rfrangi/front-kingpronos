@@ -1,4 +1,4 @@
-import {CLUBS_BASKETBALL, CLUBS_FOOTBALL, JOUEUR_TENNIS, Equipe} from './equipe.model';
+import {CLUBS_BASKETBALL, CLUBS_FOOTBALL, JOUEUR_TENNIS, Equipe, CLUBS_HOCHEY_GLACE} from './equipe.model';
 
 export class Categorie {
 
@@ -23,6 +23,9 @@ export class Categorie {
       case CATEGORIES.TENNIS:
         result = JOUEUR_TENNIS[code];
         break;
+      case CATEGORIES.HOCHEY_GLACE:
+        result = CLUBS_HOCHEY_GLACE[code];
+        break;
       default:
         result =  this.loadEquipeInconnu(code);
     }
@@ -41,6 +44,9 @@ export class Categorie {
         break;
       case CATEGORIES.TENNIS:
         result = Object.values(JOUEUR_TENNIS);
+        break;
+      case CATEGORIES.HOCHEY_GLACE:
+        result = Object.values(CLUBS_HOCHEY_GLACE);
         break;
       default:
         result =  [];
