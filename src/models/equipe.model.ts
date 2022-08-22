@@ -592,3 +592,44 @@ export const CLUBS_FOOTBALL: any = {
   HAMILTON: new Equipe({ code: 'HAMILTON', label: 'Hamilton', codePays : 'PT', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/Ch_0e0dhuFXkgKROOF8F9A_96x96.png' }),
   ROSS_COUNTRY: new Equipe({ code: 'ROSS_COUNTRY', label: 'Ross country', codePays : 'PT', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/yhoJzLSKHOGmQhZMLXOUPA_96x96.png' })
 };
+
+
+
+export const CLUBS_HOCHEY_GLACE: any = {
+  PANTHERS: new Equipe({ code: 'PANTHERS', label: 'Panthers', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/HhkdL7JKqdlVy_DtjLOjbw_96x96.png' }),
+  MAPLE_LEAFS: new Equipe({ code: 'MAPLE_LEAFS', label: 'Maple Leafs', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/jMSyNOMdJPjHwsmbWukUag_96x96.png' }),
+  LIGHTNING: new Equipe({ code: 'LIGHTNING', label: 'Lightning', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/IFjTMxl-nMxMJK2b64xLFQ_96x96.png' }),
+  BRUINS: new Equipe({ code: 'BRUINS', label: 'Bruins', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/_KkOxoGjAn3S7_9-Z1d0OA_96x96.png' }),
+  SABRES: new Equipe({ code: 'SABRES', label: 'Sabres', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/6vSZsDaiDt1MW__o_ksW4A_96x96.png' }),
+  RED_WINGS: new Equipe({ code: 'RED_WINGS', label: 'Red Wings', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/QaP8buCif1FvjfqApkxsDg_96x96.png' }),
+  SENATEURS: new Equipe({ code: 'SENATEURS', label: `Sénateurs`, codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/_rlImUQJkjVKGTj1Xkdaaw_96x96.png' }),
+  CANADIENS: new Equipe({ code: 'CANADIENS', label: 'Canadiens', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/fhexjWXZM7Sgvd22nDkBOA_96x96.png' }),
+  HURRICANES: new Equipe({ code: 'HURRICANES', label: 'Hurricanes', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/nC8dMKdf-zPF4cWq_wSKHA_96x96.png' }),
+  RANGERS: new Equipe({ code: 'RANGERS', label: 'Rangers', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/xAan1UsViSOex0EoBJEMOA_96x96.png' }),
+  PENGUINS: new Equipe({ code: 'PENGUINS', label: 'Penguins', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/mTXURxq0CbsVREw9q3UAnw_96x96.png' }),
+  ISLANDERS: new Equipe({ code: 'ISLANDERS', label: 'Islanders', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/wIWMfokR7qsGJM1gFhRrUA_96x96.png' }),
+  BLUE_JACKETS: new Equipe({ code: 'BLUE_JACKETS', label: 'Blue Jackets', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/7lrK9CX_nZj_veEeleHTmg_96x96.png' }),
+  DEVILS: new Equipe({ code: 'DEVILS', label: 'Devils', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/dlm2PLEGHJY8DzDLloxLcQ_96x96.png' }),
+  FLYERS: new Equipe({ code: 'FLYERS', label: 'Flyers', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/ZFZEyofJ8vMrr0tFGsMFKg_96x96.png' }),
+  CAPITALS: new Equipe({ code: 'CAPITALS', label: 'Capitals', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/uT-r__4aRFZmtEITN9mNdQ_96x96.png' }),
+
+  AVALANCHE: new Equipe({ code: 'AVALANCHE', label: 'Avalanche', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/iBFLyMGpOW2Fh5j8s7kYpw_96x96.png' }),
+  WILD: new Equipe({ code: 'WILD', label: 'Wild', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/2AkZ-bLhHUaPoj_LlLPBVA_96x96.png' }),
+  BLUES: new Equipe({ code: 'BLUES', label: 'Blues', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/oUzPuWuhgzayhHwucx8htQ_96x96.png' }),
+  STARS: new Equipe({ code: 'STARS', label: 'Stars', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/yAPda2I1VV6sr0TB17rnxQ_96x96.png' }),
+  PREDATORS: new Equipe({ code: 'PREDATORS', label: 'Predators', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/8aNIxgSUNttfOeojBie04w_96x96.png' }),
+  JETS: new Equipe({ code: 'JETS', label: 'Jets', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/G92uFvMADMSGFV07IgpUIQ_96x96.png' }),
+  BLACKHAWKS: new Equipe({ code: 'BLACKHAWKS', label: 'Blackhawks', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/kUlSd6LbUN7Jj03mqZcgAw_96x96.png' }),
+  COYOTES: new Equipe({ code: 'COYOTES', label: 'Coyotes', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/dhQ15Ly2gTPvCPbJEq-OHA_96x96.png' }),
+
+  FLAMES: new Equipe({ code: 'FLAMES', label: 'Flames', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/jwG6UfooGEJ_nvOVT_0ykw_96x96.png' }),
+  OILERS: new Equipe({ code: 'OILERS', label: 'Oilers', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/GFR5_nXarHj6qRI8R05otg_96x96.png' }),
+  KINGS: new Equipe({ code: 'KINGS', label: 'Kings', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/74fKqDZ5DMq7qup120TeSQ_96x96.png' }),
+  GOLDEN_KNIGHTS: new Equipe({ code: 'GOLDEN_KNIGHTS', label: 'Golden Knights', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/QeG0x42j0YlJGYEAwowewA_96x96.png' }),
+  CANUCKS: new Equipe({ code: 'CANUCKS', label: 'Canucks', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/1SVoPsK2xW65VIfyQB2soQ_96x96.png' }),
+  SHARKS: new Equipe({ code: 'SHARKS', label: 'Sharks', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/TuRBhY0zNhgZUbHQS4VUhQ_96x96.png' }),
+  DUCKS: new Equipe({ code: 'DUCKS', label: 'Ducks', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/Ujlge7BWmyIJvsCwu3y-Lw_96x96.png' }),
+  KRAKEN: new Equipe({ code: 'KRAKEN', label: 'Kraken', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/gv_klUIk7LBmA857rbdOvw_96x96.png' }),
+
+}
+ // PANTHERS: new Equipe({ code: '', label: '', codePays : '', url: '' })
