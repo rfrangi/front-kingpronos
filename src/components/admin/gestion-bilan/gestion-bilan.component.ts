@@ -138,6 +138,7 @@ export class GestionBilanComponent {
   }
 
   createToolTipForBankrollEnCours(prono: Pronostic | null, date: string, bankroll: any): string {
+    console.log(prono);
     if (!prono) {
       return '<div style="padding:10px;text-align: center;">' +
         '<strong style="color:orange;vertical-align: middle;display: inline-block;">'
@@ -147,11 +148,12 @@ export class GestionBilanComponent {
 
     let titre = '';
     prono.matchs.map(match => {
-      titre += '<img style="width:15px;padding-right: 10px;vertical-align: middle;display: inline-block;" ' +
+      titre += '<div class="d-flex flex-row align-items-center justify-content-center">' +
+        '<img class="mx-0 pe-1" style="width:40px;" ' +
         'src="' + match.categorie.img + '" alt="' + match.categorie.label + '"/>'
-        + '<span style="font-size: 16px; vertical-align: middle;display: inline-block;">' + match.titre + '</span>'
-        + '<img style="width:15px;padding-left: 10px;vertical-align: middle;display: inline-block;" ' +
-        'src="' + match.categorie.img + '" alt="' + match.categorie.label + '"/>'
+        + '<span style="font-size: 16px;">' + match.titre + '</span>'
+        + '<img class="mx-0 ps-1" style="width:40px;" ' +
+        'src="' + match.categorie.img + '" alt="' + match.categorie.label + '"/></div>'
         + '<br/>';
     });
 
