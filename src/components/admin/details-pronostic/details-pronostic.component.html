@@ -58,7 +58,7 @@
         <input matInput
                placeholder="Mise en €"
                [(ngModel)]="miseEuro"
-               disabled
+               (input)="changeMise()"
                maxlength="3"
                name="miseEuro"
                required
