@@ -78,7 +78,7 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
     <div class="details-gain"  *ngIf="prono.matchs.length > 0">
       <span class="mise">
         Mise:
-        <strong>{{prono.mise}}%</strong>,
+        <strong>{{prono.mise | number:'.0-0'}}%</strong>,
       </span>
       <span class="coteTotal">
         Cote:
