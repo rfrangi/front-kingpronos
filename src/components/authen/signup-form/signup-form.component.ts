@@ -17,7 +17,7 @@ import { PATTERN_EMAIL } from '../../../utils/regexp';
     <img src="assets/icons/logo_accueil.png" class="logo-accueil" alt="logo"/>
     <div class="block">
       <!--<h2>Rejoignez nous</h2>-->
-      <p class="description-auth">Dans quelques instants vous pourrez naviger sur la communauté de King Pronos, il suffit de remplir ce formulaire.</p>
+      <p class="description-auth">Dans quelques instants vous pourrez naviger sur la communauté de Pierrick Pronos, il suffit de remplir ce formulaire.</p>
       <form autocomplete="off"
             class="signup-form hide-validation-errors"
             (submit)="isFormValid() && submit()">
