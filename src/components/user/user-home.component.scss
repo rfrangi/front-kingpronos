@@ -1,36 +1,12 @@
 @import '../../css/colors';
 
-
-.logo-user {
-  margin: 0 10px;
+.logo {
+  max-width: 5em;
+  width: 5em;
+  height: 5em;
+  max-height: 5em;
 }
 
-span.mat-button-wrapper {
-    font-size: 0.8em;
+.login {
+  max-width: 10em;
 }
-
-.mat-card-avatar {
-  padding: 5px;
-}
-
-.block {
-  background: $COLOR_BLACK_LIGHT;
-  margin: 1em 0 0 1em;
-}
-
-mat-card-title, h2 {
-  color: $COLOR_ORANGE_DARK;
-}
-
-mat-card-header {
-  overflow: hidden;
-}
-
-mat-card-subtitle a {
-  color: orange;
-}
-
-h2 {
-  font-weight: 500;
-}
-

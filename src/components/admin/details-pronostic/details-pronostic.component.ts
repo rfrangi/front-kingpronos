@@ -20,6 +20,8 @@ import {PopinAddMatchComponent} from '../popin-add-match/popin-add-match.compone
 
 import {getDebutDate, getFinDate} from '../../../utils/date-util';
 import {URL_STOCKAGE} from '../../../utils/fetch';
+import { Editor, toHTML, toDoc, Toolbar  } from 'ngx-editor';
+import {FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector:  'details-pronostic',
@@ -35,7 +37,26 @@ export class DetailsPronosticComponent implements OnInit {
   public url!: any;
   public LIST_PRIVACY = LIST_PRIVACY;
   private file!: File;
-  miseEuro: any;
+  public miseEuro: any;
+  public editor!: Editor;
+  public html: string = '';
+
+  toolbar: Toolbar = [
+    // default value
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['ordered_list', 'bullet_list'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+    ['horizontal_rule', 'format_clear'],
+  ];
+
+  public form = new FormGroup({
+    editorContent: new FormControl({ value: '', disabled: false }),
+  });
+  // make sure to destory the editor
+  ngOnDestroy(): void {
+    this.editor.destroy();
+  }
 
   constructor(private router: Router,
               private toast: ToastService,
@@ -62,14 +83,16 @@ export class DetailsPronosticComponent implements OnInit {
 
   submit(): void {
     this.popinService.showLoader(`Enregistrement en cours...`);
+    const prono = new Pronostic(this.pronostic.serialize());
+    prono.description = toHTML(this.pronostic.description as any);
     if (this.pronostic.id) {
-      this.pronosticService.update(this.pronostic, this.file).subscribe(
+      this.pronosticService.update(prono, this.file).subscribe(
         () => this.back(),
         err => this.toast.genericError(err),
         () => this.popinService.closeLoader()
       );
     } else {
-      this.pronosticService.post(this.pronostic, this.file).subscribe(
+      this.pronosticService.post(prono, this.file).subscribe(
         prono => {
           this.pronostic = prono;
           this.back();
@@ -97,12 +120,14 @@ export class DetailsPronosticComponent implements OnInit {
 
   onParamsChange(params: any): void {
     this.popinService.showLoader();
+    this.editor = new Editor();
     if (params.idProno) {
       forkJoin(
         this.pronosticService.getById( params.idProno),
         this.globalParamsService.get()
       ).subscribe(
         ([pronostic, globalParams]) => {
+          pronostic.description  = toDoc(pronostic.description) as any;
           this.pronostic = pronostic;
           this.changeMisePourCentage();
           this.globalParams = globalParams;

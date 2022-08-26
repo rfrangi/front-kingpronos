@@ -29,12 +29,16 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
       (click)="changePrivacy('PUBLIC')">Pronos Publics</li>
 </ul>
 
-<div class="col1" *ngIf="!mobileQuery.matches">
+<div class="d-flex flex-row justify-content-center align-items-start flex-fill">
+<div class=" d-none d-lg-flex flex-column">
     <user-home></user-home>
-    <reseaux-sociaux [hasTitle]="false" [globalParams]="globalParams" [isHomePage]="true" *ngIf="globalParams?.hasReseaux()"></reseaux-sociaux>
+    <reseaux-sociaux class="ms-3"
+                     [hasTitle]="false"
+                     [globalParams]="globalParams"
+                     [isHomePage]="true" *ngIf="globalParams?.hasReseaux()"></reseaux-sociaux>
 </div>
 
-<div [class.col2]="!mobileQuery.matches">
+<div class="flex-grow-1 flex-fill">
   <list-prono [pronostics]="pronostics"></list-prono>
   <div class="pagination"
        *ngIf="pronostics
@@ -49,28 +53,29 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
     </button>
   </div>
 </div>
-<div class="col3 gestion-abonnement" *ngIf="!mobileQuery.matches">
-  <mat-card class="block" *ngIf="tokenStorageService?.isValid()">
-    <mat-card-content>
-      <img class="picto-vip" [src]="vip.img" [alt]="vip.code"/>
-      <label class="message-vip">{{getMessageVIP()}}</label>
+<div class="d-none d-lg-flex flex-column">
+  <mat-card class="block bg-dark ms-0" *ngIf="tokenStorageService?.isValid()">
+    <mat-card-content class="d-flex flex-column align-items-center">
+      <img class="w-25" [src]="vip.img" [alt]="vip.code"/>
+      <label class="text-white">{{getMessageVIP()}}</label>
     </mat-card-content>
     <button mat-button class="btn-add-vip"
             color="primary"
             name="btn-go-to-abo"
             (click)="goToAbonnements()"
             *ngIf="!tokenStorageService?.getUser()?.hasProfilVIP()">
-      Deve nir VIP
+      Devenir VIP
     </button>
   </mat-card>
-  <mat-card class="block mat-card-code-prono" *ngIf="tokenStorageService?.isValid()">
+  <mat-card class="block bg-dark d-flex align-items-center ms-0" *ngIf="tokenStorageService?.isValid()">
     <button mat-button
             name="btn-valider"
-            class="btn-add-code-prono"
+            class="btn-add-code-prono flex-grow-1 flex-fill"
             (click)="addCodeBonus()">
       Entrer un code bonus
     </button>
   </mat-card>
+</div>
 </div>
   `,
   styleUrls: ['./home.component.scss'],
@@ -78,15 +83,12 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
 })
 export class HomeComponent implements OnInit {
 
-  pronostics: Array<Pronostic> = [];
-  privacySelected = 'PUBLIC';
-  pagination: PaginationService = new PaginationService({});
+  public pronostics: Array<Pronostic> = [];
+  public privacySelected = 'PUBLIC';
+  public pagination: PaginationService = new PaginationService({});
 
-  globalParams!: GlobalParams;
-  vip = LIST_PROFIL.VIP;
-
-  private mobileQueryListener: () => void;
-  mobileQuery: MediaQueryList;
+  public globalParams!: GlobalParams;
+  public vip = LIST_PROFIL.VIP;
 
   constructor(public tokenStorageService: TokenStorageService,
               private router: Router,
@@ -95,14 +97,7 @@ export class HomeComponent implements OnInit {
               private userService: UserService,
               private popinService: PopinService,
               private pronosticService: PronosticsService,
-              private globalParamsService: GlobalParamService,
-              private changeDetectorRef: ChangeDetectorRef,
-              private media: MediaMatcher) {
-    this.mobileQuery = this.media.matchMedia('(max-width: 951px)');
-    this.mobileQueryListener = () => {
-      this.changeDetectorRef.detectChanges();
-    };
-    this.mobileQuery.addListener(this.mobileQueryListener);
+              private globalParamsService: GlobalParamService) {
   }
 
   ngOnInit(): void {
