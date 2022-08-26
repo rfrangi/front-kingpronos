@@ -1,5 +1,10 @@
 @import "../../../css/colors";
 
+
+form.saisie-form {
+  max-width: 100%!important;
+}
+
 .block {
   background: $COLOR_BLACK_LIGHT;
   margin: 1em auto;
@@ -18,9 +23,11 @@
   &.block-form-description {
     padding-bottom: 0;
     padding-top: 0.5em;
+    height: 15em;
 
     mat-form-field {
       padding-bottom: 0;
+      height: 15em;
     }
   }
 
@@ -111,6 +118,7 @@ ul {
 .action {
   text-align: center;
   margin: 1em auto;
+  padding-bottom: 2em;
   width: 20em;
 
   button {
