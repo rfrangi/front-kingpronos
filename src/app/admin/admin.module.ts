@@ -37,6 +37,8 @@ import {
   GestionBankrollComponent
 } from "../../components/admin/gestion-parametres/gestion-bankroll/gestion-bankroll.component";
 
+import { NgxEditorModule } from 'ngx-editor';
+
 @NgModule({
   declarations: [
     GestionAdminComponent,
@@ -63,7 +65,8 @@ import {
   imports: [
     AdminRoutingModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    NgxEditorModule
   ]
 })
 export class AdminModule { }
