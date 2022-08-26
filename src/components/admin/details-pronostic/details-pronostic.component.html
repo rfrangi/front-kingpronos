@@ -103,23 +103,29 @@
       </mat-checkbox>
     </div>
   </div>
-  <div class="block block-form-description">
-    <mat-form-field>
-      <textarea matInput
-                rows="10"
-                [(ngModel)]="pronostic.description"
-                #description="ngModel"
-                [required]="pronostic.matchs.length === 0"
-                name="description"
-                placeholder="Description">
-      </textarea>
-      <p class="error required"
-         *ngIf="description.errors?.['required']">
-        La description est obligatoire
-      </p>
-    </mat-form-field>
+  <div class="block">
+    <h6 class="text-secondary">Description</h6>
+    <ngx-editor-menu
+      [editor]="editor"
+      [toolbar]="toolbar"
+    >
+    </ngx-editor-menu>
+    <div class="block block-form-description">
+    <ngx-editor
+      [editor]="editor"
+      class="bg-dark"
+      name="description"
+      [(ngModel)]="pronostic.description"
+      #description="ngModel"
+      [disabled]="false"
+      [placeholder]="''"
+    ></ngx-editor>
+    <p class="error required"
+       *ngIf="description.errors?.['required']">
+      La description est obligatoire
+    </p>
+    </div>
   </div>
-
   <div class="block block-upload">
     <file-base64
       class="d-block"

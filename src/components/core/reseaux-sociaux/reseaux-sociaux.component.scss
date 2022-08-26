@@ -1,22 +1,11 @@
 @import "../../../css/colors";
 
-.rejoignez-nous {
-
-  &.is-home-page {
-    margin: 1em 0 1em 1em;
-    width: auto;
-  }
-
-  background: $COLOR_BLACK_LIGHT;
-  width: 22em;
-  text-align: center;
-  margin: 1em auto;
-  padding: 1em;
-
-  img {
-    display: inline-block;
-    width: 50px;
-    margin: 0 5%;
+.reseau {
+  max-width: 22em;
+  margin: auto;
+}
+  a {
+    width: 4em;
     cursor: pointer;
   }
-}
+

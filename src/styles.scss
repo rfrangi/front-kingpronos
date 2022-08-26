@@ -28,3 +28,19 @@ body {
   background: orange;
   color: white;
 }
+
+ngx-editor {
+  width: 100%;
+
+  div.NgxEditor {
+    color: white;
+    background: #242424;
+    border: none;
+    height: 100%;
+
+    div.NgxEditor__Content {
+      height: 100%;
+    }
+  }
+}
+
