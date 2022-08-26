@@ -295,7 +295,7 @@ export class MyAccountFormComponent implements OnInit {
   }
 
   changeNotif(): void {
-    this.toast.warning('Fonctionnalité non disponible');
+   // this.toast.warning('Fonctionnalitée non disponible');
 
    /* this.popinService.openPopin(PopinConfirmComponent, {
       data: {
