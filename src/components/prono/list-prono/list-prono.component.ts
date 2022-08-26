@@ -15,6 +15,8 @@ import {PRONO_STATUS } from '../../../models/pronostic-status.model';
 import { Pronostic } from '../../../models/pronostic.model';
 import {URL_STOCKAGE} from '../../../utils/fetch';
 
+import { Editor, toHTML, toDoc  } from 'ngx-editor';
+
 @Component({
   selector: 'list-prono',
   styleUrls: ['./list-prono.component.scss'],
@@ -89,9 +91,8 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
         <strong *ngIf="prono.status != LIST_STATUS.CANCEL">{{prono.gain}} €</strong>
       </span>
     </div>
-    <p class="prono-description my-2" *ngIf="tokenStorage.getUser()?.hasVIPValid()">
-        {{prono?.description}}
-    </p>
+    <div class="prono-description my-2" *ngIf="tokenStorage.getUser()?.hasVIPValid()" [innerHTML]="prono.description">
+    </div>
     <div class="div-image">
         <img class="image-prono" *ngIf="prono.urlImage" [src]="getUrl(prono)" alt="image-prono">
     </div>
@@ -211,5 +212,11 @@ export class ListPronoComponent {
       err => this.toast.genericError(err),
       () => this.popinService.closeLoader()
     );
+  }
+
+  public getDescription(description: any): any {
+    if(description) {
+      return toHTML(description);
+    }
   }
 }

@@ -9,12 +9,13 @@ import {URL_STOCKAGE} from '../../utils/fetch';
 @Component({
   selector:  'user-home',
   template: `
-    <mat-card class="block" *ngIf="tokenStorage?.isValid()">
-          <mat-card-header>
-            <img mat-card-avatar [src]="logoDataUrl" class="logo-user"/>
-            <mat-card-title>{{tokenStorage.getUser()?.login}}</mat-card-title>
-            <mat-card-subtitle><a (click)="goToMyAccountForm()">modifier</a></mat-card-subtitle>
-        </mat-card-header>
+    <mat-card class="block bg-dark d-flex flex-row me-0 shadow align-items-center align-content-center"
+              *ngIf="tokenStorage?.isValid()">
+      <img mat-card-avatar [src]="logoDataUrl" class="me-2 p-0 logo"/>
+      <div class="d-flex flex-column ms-2 overflow-hidden">
+        <div class="text-primary fs-5 login">{{tokenStorage.getUser()?.login}}</div>
+        <a (click)="goToMyAccountForm()">modifier</a>
+      </div>
     </mat-card>`,
   styleUrls: ['./user-home.component.scss']
 })

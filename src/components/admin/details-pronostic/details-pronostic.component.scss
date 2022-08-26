@@ -19,6 +19,12 @@ form.saisie-form {
     }
   }
 
+  &.block-form-description {
+    height: 15em;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
   &.block-form-privacy,
   &.block-form-description {
     padding-bottom: 0;
