@@ -59,7 +59,7 @@ export interface DialogData {
 })
 export class PopinCrudAbonnementComponent implements OnInit {
 
-  abonnementForm!: FormGroup;
+  public abonnementForm!: FormGroup;
 
   constructor(private abonnementService: AbonnementService,
               private toast: ToastService,

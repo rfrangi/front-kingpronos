@@ -36,17 +36,20 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
                      [hasTitle]="false"
                      [globalParams]="globalParams"
                      [isHomePage]="true" *ngIf="globalParams?.hasReseaux()"></reseaux-sociaux>
+  <div class="mt-3">
+    <app-details-bookmaker [bookmaker]="bookmaker" *ngFor="let bookmaker of globalParams.bookmakers"></app-details-bookmaker>
+  </div>
 </div>
 
-<div class="flex-grow-1 flex-fill">
-  <list-prono [pronostics]="pronostics"></list-prono>
-  <div class="pagination"
+<div class="d-flex flex-column align-content-center align-items-center flex-grow-1 flex-fill">
+  <list-prono [pronostics]="pronostics" class="w-100"></list-prono>
+  <div class="pagination text-center py-3"
        *ngIf="pronostics
        && pronostics.length > 0
        && (tokenStorageService?.getUser()?.hasVIPValid() || privacySelected === 'PUBLIC')">
     <button mat-button
+            color="primary"
             name="btn-next"
-            matTooltip="Page Précédente"
             [class.disabled]="pagination.isFirstPage"
             (click)="showMore()">
       Afficher plus

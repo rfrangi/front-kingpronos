@@ -70,27 +70,6 @@ div.block {
   min-width: 14em;
 }
 
-.pagination {
-  background: #242424;
-  margin: 1em;
-  padding: 1em;
-  display: block;
-  text-align: center;
-
-  button {
-    border-radius: 5px;
-    border: 1px solid orange;
-    color: orange;
-    background: $COLOR_FONT_DARK;
-    vertical-align: middle;
-    margin: 0 1em;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.12);
-    }
-  }
-
-}
 
 @media only screen and (min-width: 0) and (max-width: 750px) {
 
@@ -129,4 +108,24 @@ div.block {
 .btn-add-code-prono {
   color: orange;
   border: 1px solid orange;
+}
+
+
+.pagination {
+
+  button {
+    border-radius: 5px;
+    border: 1px solid $COLOR_ORANGE_DARK;
+    color: white;
+    background: $COLOR_ORANGE_DARK;
+    vertical-align: middle;
+    margin: 0 1em;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: $COLOR_ORANGE_DARK;
+
+    }
+  }
+
 }
