@@ -47,12 +47,9 @@ export class DetailsPronosticComponent implements OnInit {
     ['underline', 'strike'],
     ['ordered_list', 'bullet_list'],
     ['align_left', 'align_center', 'align_right', 'align_justify'],
-    ['horizontal_rule', 'format_clear'],
   ];
+  public form!: FormGroup;
 
-  public form = new FormGroup({
-    editorContent: new FormControl({ value: '', disabled: false }),
-  });
   // make sure to destory the editor
   ngOnDestroy(): void {
     this.editor.destroy();
@@ -71,6 +68,10 @@ export class DetailsPronosticComponent implements OnInit {
     });
   }
 
+  public hasError = (controlName: string, errorName: string) => {
+    return this.form.controls[controlName].hasError(errorName);
+  }
+
   getUrlImage(): string| null {
     if (this.pronostic.urlImage && !this.url) {
       return URL_STOCKAGE + this.pronostic.urlImage;
@@ -82,9 +83,13 @@ export class DetailsPronosticComponent implements OnInit {
   }
 
   submit(): void {
+    console.log(this.form);
+
     this.popinService.showLoader(`Enregistrement en cours...`);
     const prono = new Pronostic(this.pronostic.serialize());
-    prono.description = toHTML(this.pronostic.description as any);
+    if(this.form.value.description) {
+      prono.description = toHTML(this.form.value.description as any);
+    }
     if (this.pronostic.id) {
       this.pronosticService.update(prono, this.file).subscribe(
         () => this.back(),
@@ -118,6 +123,15 @@ export class DetailsPronosticComponent implements OnInit {
     return this.url ? `Changer l'image` : 'Ajouter une image';
   }
 
+  public initForm(pronostic: Pronostic): void {
+    this.form = new FormGroup({
+      description: new FormControl({
+        value: pronostic.description || '',
+        disabled: false
+      }, [Validators.required, Validators.maxLength(300)]),
+    });
+  }
+
   onParamsChange(params: any): void {
     this.popinService.showLoader();
     this.editor = new Editor();
@@ -129,6 +143,7 @@ export class DetailsPronosticComponent implements OnInit {
         ([pronostic, globalParams]) => {
           pronostic.description  = toDoc(pronostic.description) as any;
           this.pronostic = pronostic;
+          this.initForm(this.pronostic);
           this.changeMisePourCentage();
           this.globalParams = globalParams;
         },
@@ -152,6 +167,7 @@ export class DetailsPronosticComponent implements OnInit {
           this.pronostic = new Pronostic(
             {bankroll: pronostics.length > 0 ? this.globalParams.bankrollCurrent : this.globalParams.bankrollDepart}
           );
+          this.initForm(this.pronostic);
         },
         err => this.toast.genericError(err),
         () => this.popinService.closeLoader()

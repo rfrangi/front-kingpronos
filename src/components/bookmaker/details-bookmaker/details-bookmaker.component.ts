@@ -5,7 +5,7 @@ import {Bookmaker} from "../../../models/bookmaker.model";
   selector:  'app-details-bookmaker',
   styleUrls: ['./details-bookmaker.component.scss'],
   template: `
-    <mat-card *ngIf="bookmaker" class="bg-dark mx-auto d-block shadow mb-4">
+    <mat-card *ngIf="bookmaker" class="bg-dark mx-auto d-block shadow mb-3">
       <mat-card-content class="text-center">
         <img [src]="bookmaker.urlLogo" [alt]="bookmaker.name">
         <p class="abo-description my-3">{{bookmaker.description}}</p>
