@@ -10,6 +10,7 @@ import {  UserService } from '../../../services/user.service';
 import {PopinService} from '../../../services/popin.service';
 
 import {User} from '../../../models/user.model';
+import {TokenStorageService} from "../../../services/token-storage.service";
 
 
 @Component({
@@ -54,6 +55,10 @@ import {User} from '../../../models/user.model';
         <th (search)="search()">
             Actif
         </th>
+
+      <th (search)="search()" *ngIf="tokenStorage?.getUser()?.hasProfilAdmin()">
+        Dernière connexion
+      </th>
       <!--  <th (search)="search()">
             VIP
         </th>-->
@@ -69,9 +74,10 @@ import {User} from '../../../models/user.model';
         <mat-icon *ngIf="user.isEnabled" class="user-actif" [matTooltip]="user.lastConnectionDate | date:'DD-MM-YYYY hh:mm'">check_circle_outline</mat-icon>
 
       </td>
-        <!--<td>
-          {{ user.hasVIPValid() ? 'Oui' : 'Non' }}
-        </td>-->
+      <td  *ngIf="tokenStorage?.getUser()?.hasProfilAdmin()">{{ user.lastConnectionDate  | date:'DD JANVIER YYYY à hh:mm' }}</td>
+      <!--<td>
+        {{ user.hasVIPValid() ? 'Oui' : 'Non' }}
+      </td>-->
         <td class="td-actions">
             <button mat-icon-button [matMenuTriggerFor]="menu">
                 <mat-icon color="primary">more_vert</mat-icon>
@@ -112,6 +118,7 @@ export class GestionUtilisateursComponent implements OnInit {
   constructor(private toast: ToastService,
               private popinService: PopinService,
               private route: ActivatedRoute,
+              public tokenStorage: TokenStorageService,
               private router: Router,
               private userService: UserService) {}
 
