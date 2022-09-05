@@ -18,6 +18,8 @@ import { Pronostic } from '../../models/pronostic.model';
 import {GlobalParams} from '../../models/global-params.model';
 
 import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
+import {BookmakersService} from "../../services/bookmakers.service";
+import {Bookmaker} from "../../models/bookmaker.model";
 
 @Component({
   selector:  'home',
@@ -36,8 +38,10 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
                      [hasTitle]="false"
                      [globalParams]="globalParams"
                      [isHomePage]="true" *ngIf="globalParams?.hasReseaux()"></reseaux-sociaux>
-  <div class="mt-3">
-    <app-details-bookmaker [bookmaker]="bookmaker" *ngFor="let bookmaker of globalParams.bookmakers"></app-details-bookmaker>
+  <div class="mt-3" *ngIf="bookmakers">
+    <ng-container *ngFor="let bookmaker of bookmakers">
+        <app-details-bookmaker [bookmaker]="bookmaker"></app-details-bookmaker>
+    </ng-container>
   </div>
 </div>
 
@@ -62,7 +66,7 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
       <img class="w-25" [src]="vip.img" [alt]="vip.code"/>
       <label class="text-white">{{getMessageVIP()}}</label>
     </mat-card-content>
-    <button mat-button class="btn-add-vip"
+    <button mat-button class="btn-add-vip text-white"
             color="primary"
             name="btn-go-to-abo"
             (click)="goToAbonnements()"
@@ -87,6 +91,7 @@ import { dateToday, dayDiff, startOfDay} from '../../utils/date-util';
 export class HomeComponent implements OnInit {
 
   public pronostics: Array<Pronostic> = [];
+  public bookmakers: Array<Bookmaker> = [];
   public privacySelected = 'PUBLIC';
   public pagination: PaginationService = new PaginationService({});
 
@@ -99,6 +104,7 @@ export class HomeComponent implements OnInit {
               private route: ActivatedRoute,
               private userService: UserService,
               private popinService: PopinService,
+              private bookmakerService: BookmakersService,
               private pronosticService: PronosticsService,
               private globalParamsService: GlobalParamService) {
   }
@@ -129,15 +135,17 @@ export class HomeComponent implements OnInit {
 
   initData(): void {
     const params = Object.assign({ page: this.pagination.currentPage, privacy: this.privacySelected });
-    this.popinService.showLoader();
+    this.popinService.showLoader(`Chargement des données`);
     forkJoin(
       this.pronosticService.getAll(params),
-      this.globalParamsService.get()
+      this.globalParamsService.get(),
+      this.bookmakerService.getAll()
     ).subscribe(
-      ([data, globalParams]) => {
+      ([data, globalParams, bookmakers]) => {
         this.pronostics = data.result.filter((prono: any) => prono.privacy.code === this.privacySelected);
         this.pagination = data.pagination;
         this.globalParams = globalParams;
+        this.bookmakers = bookmakers;
       },
       err => this.toast.genericError(err),
       () => this.popinService.closeLoader()

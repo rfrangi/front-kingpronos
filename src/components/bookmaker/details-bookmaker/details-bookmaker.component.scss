@@ -1,3 +1,6 @@
+@import "../../../css/colors";
+
+
 img {
   width: 9em;
 }
@@ -57,6 +60,14 @@ div.block2 {
 
   .btn-ajouter {
     margin: 0.5em;
+  }
+}
+a {
+  color: orange;
+  border: 1px solid orange;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
   }
 }
 
