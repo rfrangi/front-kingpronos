@@ -103,7 +103,7 @@
       </mat-checkbox>
     </div>
   </div>
-  <div class="block">
+  <form [formGroup]="form"  class="block" style="max-width: 100%!important">
     <h6 class="text-secondary">Description</h6>
     <ngx-editor-menu
       [editor]="editor"
@@ -114,18 +114,14 @@
     <ngx-editor
       [editor]="editor"
       class="bg-dark"
-      name="description"
-      [(ngModel)]="pronostic.description"
-      #description="ngModel"
+      name="editorContent"
+      formControlName="description"
       [disabled]="false"
       [placeholder]="''"
     ></ngx-editor>
-    <p class="error required"
-       *ngIf="description.errors?.['required']">
-      La description est obligatoire
-    </p>
     </div>
-  </div>
+    <mat-error *ngIf="hasError('description', 'maxLength')">La description est trop grande</mat-error>
+  </form>
   <div class="block block-upload">
     <file-base64
       class="d-block"
