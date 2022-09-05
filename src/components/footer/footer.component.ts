@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div>
         <mat-icon>copyright</mat-icon>
-        <a>PierrickPronos</a> | <a>Tous droits réservés</a> | <a>Application réalisée par Frangi Romain</a>
+        <a>BetProno</a> | <a>Tous droits réservés</a> | <a>Application réalisée par Frangi Romain</a>
       <a>mentions légales</a>
     </div>
   `,
