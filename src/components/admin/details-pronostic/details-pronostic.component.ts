@@ -88,7 +88,7 @@ export class DetailsPronosticComponent implements OnInit {
     this.popinService.showLoader(`Enregistrement en cours...`);
     const prono = new Pronostic(this.pronostic.serialize());
     if(this.form.value.description) {
-      prono.description = toHTML(this.form.value.description as any);
+      prono.description = this.form.value.description.type === 'doc' ? toHTML(this.form.value.description as any) : this.form.value.description;
     }
     if (this.pronostic.id) {
       this.pronosticService.update(prono, this.file).subscribe(

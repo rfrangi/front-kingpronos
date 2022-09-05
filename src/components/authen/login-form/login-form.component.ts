@@ -82,7 +82,7 @@ import {PopinService} from '../../../services/popin.service';
            Connexion avec Facebook
          </button>
        </div> -->
-          <div class="version"><label>V 2.0.0</label></div>
+          <div class="version"><label>V 4.0.1</label></div>
         </div>
 `,
   styleUrls: ['./login-form.component.scss'],
