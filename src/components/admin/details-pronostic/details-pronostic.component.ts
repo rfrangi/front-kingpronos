@@ -50,7 +50,6 @@ export class DetailsPronosticComponent implements OnInit {
   ];
   public form!: FormGroup;
 
-  // make sure to destory the editor
   ngOnDestroy(): void {
     this.editor.destroy();
   }
@@ -83,12 +82,15 @@ export class DetailsPronosticComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.form);
-
-    this.popinService.showLoader(`Enregistrement en cours...`);
     const prono = new Pronostic(this.pronostic.serialize());
+    this.popinService.showLoader(`Enregistrement en cours...`);
     if(this.form.value.description) {
-      prono.description = this.form.value.description.type === 'doc' ? toHTML(this.form.value.description as any) : this.form.value.description;
+      const description = this.form.value.description.type === 'doc' ? toHTML(this.form.value.description as any) : this.form.value.description;
+      if(description.length > 300) {
+        this.toast.warning('Description trop grande (300 caractères max)');
+        return;
+      }
+      prono.description = description;
     }
     if (this.pronostic.id) {
       this.pronosticService.update(prono, this.file).subscribe(
