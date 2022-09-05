@@ -11,7 +11,7 @@ import {Bookmaker} from "../../../models/bookmaker.model";
         <p class="abo-description my-3">{{bookmaker.description}}</p>
       </mat-card-content>
       <mat-card-actions class="text-center">
-        <a *ngIf="!isAdmin" [href]="bookmaker.url" target="_blank" class="">Choisir</a>
+        <a *ngIf="!isAdmin" [href]="bookmaker.url" target="_blank" class="d-block m-2 p-2 rounded">Choisir</a>
         <a *ngIf="isAdmin" (click)="edit.emit(bookmaker)">Modifier</a>
         <a *ngIf="isAdmin" class="ms-3" (click)="remove.emit(bookmaker)">Supprimer</a>
       </mat-card-actions>

@@ -24,7 +24,7 @@ import {TokenStorageService} from '../../services/token-storage.service';
       <button mat-menu-item
               name="btn-go-to-url"
               *ngIf="tokenStorage.getUser()?.hasProfilSuperAdmin()"
-              (click)="goToUrl(['administration', 'parametres'])">
+              (click)="goToUrl(['administration', 'parametres', 'contacts'])">
         <mat-icon color="primary">build</mat-icon>
         Paramètres
       </button>
