@@ -32,7 +32,6 @@ import {FileBase64Component} from '../../components/core/file-base64/file-base64
 import {PaginationControlComponent} from '../../components/core/pagination-control/pagination-control.component';
 import {ListPronoComponent} from '../../components/prono/list-prono/list-prono.component';
 import {DetailsMatchComponent} from '../../components/prono/details-match/details-match.component';
-import {GestionBilanComponent} from '../../components/admin/gestion-bilan/gestion-bilan.component';
 import {PopinPseudonymeComponent} from '../../components/core/popin/popin-pseudonyme/popin-pseudonyme.component';
 import {MyAccountFormComponent} from '../../components/gestion-user/my-account/my-account-form.component';
 import {ReseauxSociauxComponent} from '../../components/core/reseaux-sociaux/reseaux-sociaux.component';
@@ -42,87 +41,76 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { GoogleChartsModule } from 'angular-google-charts';
 import {DetailsBookmakerComponent} from "../../components/bookmaker/details-bookmaker/details-bookmaker.component";
+import {PopinCalculMiseComponent} from "../../components/core/popin/popin-calcul-mise/popin-calcul-mise.component";
+import {PopinCrudAbonnementComponent} from "../../components/admin/trest/popin-crud-abonnement.component";
 
+const components = [
+  FileBase64Component,
+  PaginationControlComponent,
+  ListPronoComponent,
+  MyAccountFormComponent,
+  ReseauxSociauxComponent,
+  DetailsMatchComponent,
+  ListAbonnementComponent,
+  DetailsBookmakerComponent,
+];
+
+const materials = [
+  MatAutocompleteModule,
+  MatTableModule,
+  ReactiveFormsModule,
+  MatSliderModule,
+  MatSnackBarModule,
+  MatFormFieldModule,
+  MatDividerModule,
+  MatSelectModule,
+  MatMenuModule,
+  MatInputModule,
+  MatButtonToggleModule,
+  MatSlideToggleModule,
+  MatExpansionModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatButtonModule,
+  MatIconModule,
+  MatTooltipModule,
+  MatRadioModule,
+  MatProgressSpinnerModule,
+  MatDialogModule,
+  MatCheckboxModule,
+  MatPaginatorModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+];
+
+const pipes = [
+  DatePipe
+]
+
+const popins = [
+  PopinPseudonymeComponent,
+  PopinCalculMiseComponent,
+  PopinCrudAbonnementComponent
+];
 @NgModule({
   declarations: [
-    FileBase64Component,
-    PaginationControlComponent,
-    ListPronoComponent,
-    PopinPseudonymeComponent,
-    MyAccountFormComponent,
-    ReseauxSociauxComponent,
-    DetailsMatchComponent,
-    GestionBilanComponent,
-    ListAbonnementComponent,
-    DetailsBookmakerComponent,
-    DatePipe
+    ...components,
+    ...pipes,
+    ...popins
   ],
   entryComponents: [ PopinPseudonymeComponent ],
   exports: [
-    ListAbonnementComponent,
-    DetailsMatchComponent,
-    PaginationControlComponent,
-    FileBase64Component,
-    ListPronoComponent,
-    DetailsBookmakerComponent,
-    ReseauxSociauxComponent,
-    DatePipe,
+    ...materials,
+    ...components,
+    ...popins,
+    ...pipes,
     FormsModule,
-    MatAutocompleteModule,
-    MatTableModule,
-    ReactiveFormsModule,
-    MatSliderModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatDividerModule,
-    MatSelectModule,
-    MatMenuModule,
-    MatInputModule,
-    MatButtonToggleModule,
-    MatSlideToggleModule,
-    MatExpansionModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatRadioModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatPaginatorModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     GoogleChartsModule
   ],
   imports: [
+    ...materials,
     CommonModule,
-    MatDatepickerModule,
     FormsModule,
-    MatAutocompleteModule,
-    MatTableModule,
-    ReactiveFormsModule,
-    MatSliderModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatDividerModule,
-    MatSelectModule,
-    MatMenuModule,
-    MatInputModule,
-    MatButtonToggleModule,
-    MatSlideToggleModule,
-    MatExpansionModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatRadioModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatPaginatorModule,
-    MatDatepickerModule,
     GoogleChartsModule
   ],
   providers: [

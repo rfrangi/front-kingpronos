@@ -1,0 +1,46 @@
+
+    <div class="block position-relative">
+      <mat-icon (click)="goToUrl(['home'])"
+                class="back border-1 rounded-circle border-secondary text-secondary">
+        keyboard_arrow_left
+      </mat-icon>
+      <h3>Commentaires</h3>
+      <span *ngIf="commentaires.length === 0" class="no-com">Soyer le premier à commenter ce poste</span>
+    </div>
+    <div class="block chat" *ngIf="commentaires.length > 0">
+      <div *ngFor="let com of commentaires" class="commentaire position-relative">
+        <img [src]="loadLogoUser(com)" alt="logo-user">
+        <div class="content-message">
+          <span class="pseudonyme">{{ com.pseudonyme}}</span>
+          <span class="message"> {{ com.message}}</span>
+        </div>
+        <mat-icon *ngIf="tokenStorage.getUser()?.hasProfilAdmin() || tokenStorage.getUser()?.hasProfilSuperAdmin()" class="border-1 rounded-circle border-secondary text-secondary position-absolute end-0 top-0 me-2 mt-2"
+                  matTooltip="Supprimer ce commentaire"
+                  (click)="removeCommentaire(com)"
+        >
+          delete_sweep
+        </mat-icon>
+      </div>
+    </div>
+    <div class="block ajouter">
+        <mat-form-field>
+          <textarea matInput
+                required
+                [(ngModel)]="commentaire"
+                name="send-message"
+                maxlength="200"
+                placeholder="Ecrire un commentaire">
+           </textarea>
+        </mat-form-field>
+    </div>
+    <div class="m-3 pb-3">
+      <button mat-button
+            (click)="sendMessage()"
+            class="valider text-white mb-3"
+            [disabled]="commentaire.trim().length < 1"
+            name="btn-valider"
+            color="primary"
+            type="button">
+      Envoyer
+    </button>
+    </div>

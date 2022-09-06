@@ -55,14 +55,7 @@ import {TokenStorageService} from "../../../services/token-storage.service";
         <th (search)="search()">
             Actif
         </th>
-
-      <th (search)="search()" *ngIf="tokenStorage?.getUser()?.hasProfilAdmin()">
-        Dernière connexion
-      </th>
-      <!--  <th (search)="search()">
-            VIP
-        </th>-->
-        <th></th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -74,10 +67,6 @@ import {TokenStorageService} from "../../../services/token-storage.service";
         <mat-icon *ngIf="user.isEnabled" class="user-actif" [matTooltip]="user.lastConnectionDate | date:'DD-MM-YYYY hh:mm'">check_circle_outline</mat-icon>
 
       </td>
-      <td  *ngIf="tokenStorage?.getUser()?.hasProfilAdmin()">{{ user.lastConnectionDate  | date:'DD JANVIER YYYY à hh:mm' }}</td>
-      <!--<td>
-        {{ user.hasVIPValid() ? 'Oui' : 'Non' }}
-      </td>-->
         <td class="td-actions">
             <button mat-icon-button [matMenuTriggerFor]="menu">
                 <mat-icon color="primary">more_vert</mat-icon>
@@ -140,7 +129,7 @@ export class GestionUtilisateursComponent implements OnInit {
     this.router.navigate([], { queryParams: this.getQueryParams() });
   }
 
-  getQueryParams(): void {
+  getQueryParams(): any {
     const params = Object.assign({searchTerm: ''}, this.pagination.urlParams, this.sorting.urlParams);
     params.searchTerm = this.searchTerm;
     return params;

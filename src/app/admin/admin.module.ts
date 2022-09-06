@@ -38,29 +38,33 @@ import {
 } from "../../components/admin/gestion-parametres/gestion-bankroll/gestion-bankroll.component";
 
 import { NgxEditorModule } from 'ngx-editor';
+import {PopinAbonnementsComponent} from "../../components/core/popin/popin-abonnement/popin-abonnements.component";
 
+
+const popins = [
+  PopinCrudCodeVipComponent,
+  PopinCrudAbonnementComponent,
+  PopinAddMatchComponent,
+  PopinAbonnementsComponent,
+  PopinDetailsBookmakerComponent,
+
+
+]
 @NgModule({
   declarations: [
     GestionAdminComponent,
     GestionParametresComponent,
     GestionCodeVipComponent,
     GestionAbonnementComponent,
-    GestionUtilisateursComponent, DetailsUtilisateurComponent,
-    GestionPronosticsComponent, DetailsPronosticComponent,
+    GestionUtilisateursComponent,
+    DetailsUtilisateurComponent,
+    GestionPronosticsComponent,
+    DetailsPronosticComponent,
     GestionContactsComponent,
-    PopinCrudCodeVipComponent,
-    PopinCrudAbonnementComponent,
-    PopinAddMatchComponent,
     GestionBookmakerComponent,
-    PopinDetailsBookmakerComponent,
     GestionReseauxComponent,
-    GestionBankrollComponent
-
-  ],
-  entryComponents: [
-    PopinCrudCodeVipComponent,
-    PopinCrudAbonnementComponent,
-    PopinAddMatchComponent
+    GestionBankrollComponent,
+    ...popins
   ],
   imports: [
     AdminRoutingModule,

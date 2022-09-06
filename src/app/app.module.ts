@@ -5,7 +5,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxPayPalModule } from 'ngx-paypal';
 
 import {MatTabsModule} from '@angular/material/tabs';
 
@@ -26,22 +25,13 @@ import { AuthGuard } from '../services/guard/auth';
 import {PopinMessageDuringComponent} from '../components/core/popin/popin-message-during/popin-message-during.component';
 import {PopinChangePasswordComponent} from '../components/core/popin/popin-change-password/popin-password-change.component';
 import {PopinCodePromoComponent} from '../components/core/popin/popin-cod-promo/popin-code-promo.component';
-import {PopinAbonnementsComponent} from '../components/core/popin/popin-abonnement/popin-abonnements.component';
 import {PopinConfirmComponent} from '../components/core/popin/popin-confirm/popin-confirm.component';
 import {SignupFormComponent} from '../components/authen/signup-form/signup-form.component';
 import {UserHomeComponent} from '../components/user/user-home.component';
 import {HeaderComponent} from '../components/header/header.component';
 import {UpdateAppService} from '../services/update-app.service';
 import {PopinPronosticComponent} from '../components/core/popin/popin-pronostic/popin-pronostic.component';
-import {PageAbonnementComponent } from '../components/abonnment/page-abonnement/page-abonnement.component';
-import {ListPaiementComponent} from '../components/abonnment/list-paiement/list-paiement.component';
-import {PageContactComponent} from '../components/support/page-contact/page-contact.component';
 import { FooterComponent } from '../components/footer/footer.component';
-import { ListBookmakerComponent } from '../components/bookmaker/list-bookmaker/list-bookmaker.component';
-import {MentionsLegalesComponent} from '../components/support/mentions-legales/mentions-legales.component';
-import { GestionSupportComponent } from '../components/support/gestion-support/gestion-support.component';
-import { AidesComponent } from '../components/support/aide/aides.component';
-import {PopinCalculMiseComponent} from '../components/core/popin/popin-calcul-mise/popin-calcul-mise.component';
 import {PopinUpdatePronosticComponent} from '../components/core/popin/popin-update-pronostic/popin-update-pronostic.component';
 
 import {authInterceptorProviders } from '../providers/auth.interceptor';
@@ -52,30 +42,20 @@ import {DetailsBookmakerComponent} from "../components/bookmaker/details-bookmak
   declarations: [
     AppComponent,
     HeaderComponent,
+    PopinMessageDuringComponent,
     PopinChangePasswordComponent,
     PopinCodePromoComponent,
     LoginFormComponent,
     SignupFormComponent,
     ForgotPasswordFormComponent,
     HomeComponent,
-    PopinMessageDuringComponent,
     UserHomeComponent,
-    PopinAbonnementsComponent,
     PopinUpdatePronosticComponent,
-    PopinCalculMiseComponent,
     PopinConfirmComponent,
     PopinPronosticComponent,
-    PageAbonnementComponent,
-    ListPaiementComponent,
     FooterComponent,
-    PageContactComponent,
-    ListBookmakerComponent,
-    MentionsLegalesComponent,
-    GestionSupportComponent,
-    AidesComponent,
   ],
   imports: [
-    NgxPayPalModule,
     SharedModule,
     MatTabsModule,
     RouterModule,
@@ -90,9 +70,7 @@ import {DetailsBookmakerComponent} from "../components/bookmaker/details-bookmak
     PopinMessageDuringComponent,
     PopinChangePasswordComponent,
     PopinCodePromoComponent,
-    PopinAbonnementsComponent,
     PopinConfirmComponent,
-    PopinCalculMiseComponent,
     PopinPronosticComponent,
     PopinUpdatePronosticComponent
   ],

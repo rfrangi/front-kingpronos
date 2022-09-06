@@ -42,8 +42,8 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
 </div>
 <div class="block">
   <h3>{{tokenStorage.getUser()?.login}}</h3>
-  <div class="line" *ngIf="logoDataUrl" >
-      <img [src]="logoDataUrl" alt="logo-user" [class.logo-default]="!tokenStorage.getUser()?.logo" class="logo-user"/>
+  <div class="line" *ngIf="tokenStorage.getUser()?.logoDataUrl()" >
+      <img [src]="tokenStorage.getUser()?.logoDataUrl()" alt="logo-user" [class.logo-default]="!tokenStorage.getUser()?.logo" class="logo-user"/>
   </div>
   <div class="line">
     <mat-icon matTooltip="Pour chaque amis parrainé, recevez, vous et votre amis, 2 jours de VIP">star</mat-icon>
@@ -97,7 +97,7 @@ import {URL_STOCKAGE} from '../../../utils/fetch';
     <button class="valider"
             mat-button
             name="btn-update"
-            color="primary"(click)="updatePassword()">Changer</button>
+            color="primary" (click)="updatePassword()">Changer</button>
   </div>
 </div>
 <reseaux-sociaux [globalParams]="globalParams"></reseaux-sociaux>
@@ -289,7 +289,6 @@ export class MyAccountFormComponent implements OnInit {
   }
 
   logout(): void {
-    const pseudo: string = this.tokenStorage.getUser()?.pseudonyme || '';
     this.tokenStorage.signOut();
     this.router.navigate([`login`]);
   }
