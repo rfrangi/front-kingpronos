@@ -11,7 +11,7 @@
   </p>
   <div class="block2 m-2">
     <ng-container *ngFor="let bookmaker of bookmakers">
-      <app-details-bookmaker [bookmaker]="bookmaker"></app-details-bookmaker>
+      <app-details-bookmaker [bookmaker]="bookmaker" ></app-details-bookmaker>
     </ng-container>
     <p *ngIf="bookmakers.length === 0" class="no-result">
       Aucun bookmaker disponible pour le moment
