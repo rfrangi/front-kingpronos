@@ -1,0 +1,19 @@
+ <ul class="onglets">
+    <li class="shadow" [class.onglet-selected]=""
+        (click)="goToAbonnements()">Abonnements</li>
+    <li class="shadow" [class.onglet-selected]="true"
+        (click)="goToBookmaker()">Bookmakers</li>
+  </ul>
+    <p class="description-auth" *ngIf="bookmakers?.length !== 0">
+    Vous pouvez bénéficier d'un mois VIP offert.
+    <br/>
+    Il suffit de nous parrainer en utilisant l'un des liens suivants
+  </p>
+  <div class="block2 m-2">
+    <ng-container *ngFor="let bookmaker of bookmakers">
+      <app-details-bookmaker [bookmaker]="bookmaker"></app-details-bookmaker>
+    </ng-container>
+    <p *ngIf="bookmakers.length === 0" class="no-result">
+      Aucun bookmaker disponible pour le moment
+    </p>
+  </div>

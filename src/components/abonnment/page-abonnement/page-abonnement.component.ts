@@ -6,7 +6,7 @@ import {ToastService} from '../../../services/toast.service';
 import {Abonnement} from '../../../models/abonnement.model';
 
 @Component({
-  selector:  'page-abonnement',
+  selector:  'page-abonnements',
   styleUrls: ['./page-abonnement.component.scss'],
   template: `
   <ul class="onglets">

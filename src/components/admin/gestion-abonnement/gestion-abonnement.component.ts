@@ -15,7 +15,7 @@ import {PopinService} from '../../../services/popin.service';
 import {Abonnement} from '../../../models/abonnement.model';
 
 @Component({
-  selector:  'gestion-abonnement',
+  selector:  'gestion-abonnements',
   template: `
 <div class="ajouter block">
   <mat-form-field>
