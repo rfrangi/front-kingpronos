@@ -12,8 +12,8 @@ import {Bookmaker} from "../../../models/bookmaker.model";
       </mat-card-content>
       <mat-card-actions class="text-center">
         <a *ngIf="!isAdmin" [href]="bookmaker.url" target="_blank" class="d-block m-2 p-2 rounded">Choisir</a>
-        <a *ngIf="isAdmin" (click)="edit.emit(bookmaker)">Modifier</a>
-        <a *ngIf="isAdmin" class="ms-3" (click)="remove.emit(bookmaker)">Supprimer</a>
+        <a *ngIf="isAdmin" (click)="edit.emit(bookmaker)" class="d-inline-block m-2 p-2 rounded">Modifier</a>
+        <a *ngIf="isAdmin" (click)="remove.emit(bookmaker)" class="d-inline-block m-2 ms-3 p-2 rounded">Supprimer</a>
       </mat-card-actions>
     </mat-card>
   `,

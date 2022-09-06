@@ -17,7 +17,7 @@ export interface DialogData {
 }
 
 @Component({
-  selector: 'popin-crud-abonnement',
+  selector: 'popin-crud-abonnements',
   template: `
   <h1 mat-dialog-title>{{data.abonnement.id ? 'Modifier' : 'Ajouter'}}</h1>
   <form [formGroup]="abonnementForm" autocomplete="off" novalidate>
