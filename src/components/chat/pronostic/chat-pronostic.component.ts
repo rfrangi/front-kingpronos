@@ -107,7 +107,10 @@ export class ChatPronosticComponent  implements OnInit {
 
   public removeCommentaire(commentaire: Commentaire): void {
     this.commentaireService.removeById(commentaire.id).subscribe({
-      next: () => this.toast.success('Le commentaire est supprimé'),
+      next: () => {
+        this.commentaires = this.commentaires.filter((com: Commentaire) => com.id !== commentaire.id);
+        this.toast.success('Le commentaire est supprimé.')
+      },
       error: (err) => this.toast.genericError(err)
     })
   }
