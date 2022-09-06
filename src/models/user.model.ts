@@ -1,35 +1,36 @@
 import {LIST_PROFIL, Profil} from './profil.model';
 import {CodeVIP} from './code-vip.model';
 import {dateToday} from '../utils/date-util';
+import {URL_STOCKAGE} from "../utils/fetch";
 
 export class User {
 
-  id!: string;
-  pseudonyme!: string;
-  login!: string;
-  profils: Array<Profil> = [];
-  isEnabled: boolean = true;
+  public id!: string;
+  public pseudonyme!: string;
+  public login!: string;
+  public profils: Array<Profil> = [];
+  public isEnabled: boolean = true;
 
-  codeParrain!: string;
-  codeParrainage!: string;
+  public codeParrain!: string;
+  public codeParrainage!: string;
 
-  expiredVIPDate: Date | undefined;
+  public expiredVIPDate: Date | undefined;
 
-  password!: string;
-  passwordConfirm!: string;
+  public password!: string;
+  public  passwordConfirm!: string;
 
-  logo!: any;
-  logoFileType!: string;
+  public logo!: any;
+  public logoFileType!: string;
 
-  codesVIP: Array<CodeVIP>;
+  public codesVIP: Array<CodeVIP>;
 
-  isUserFB!: boolean;
+  public isUserFB!: boolean;
 
-  creationDate!: Date;
-  lastConnectionDate!: Date;
-  modificationDate!: Date;
+  public creationDate!: Date;
+  public lastConnectionDate!: Date;
+  public modificationDate!: Date;
 
-  hasNotification!: boolean;
+  public hasNotification!: boolean;
 
   constructor(data: any = {}) {
     Object.assign(this, data);
@@ -38,7 +39,7 @@ export class User {
     this.codesVIP = data.codesVIP ? data.codesVIP.map((code: any) => new CodeVIP(code)) : [];
   }
 
-  serialize(): any {
+  public serialize(): any {
     return {
       id: this.id,
       pseudonyme: this.pseudonyme,
@@ -56,23 +57,28 @@ export class User {
     };
   }
 
-  isSamePassword(): boolean {
+  public isSamePassword(): boolean {
     return this.password === this.passwordConfirm;
   }
 
-  hasProfilSuperAdmin(): boolean {
+  public hasProfilSuperAdmin(): boolean {
     return this.profils && this.profils.includes(LIST_PROFIL.SUPER_ADMIN);
   }
 
-  hasProfilAdmin(): boolean {
+  public hasProfilAdmin(): boolean {
     return this.profils && this.profils.includes(LIST_PROFIL.ADMIN) || this.hasProfilSuperAdmin();
   }
 
-  hasProfilVIP(): boolean {
+  public hasProfilVIP(): boolean {
     return this.profils && this.profils && this.profils.includes(LIST_PROFIL.VIP);
   }
 
-  hasVIPValid(): boolean {
+  public hasVIPValid(): boolean {
     return this.profils && this.hasProfilVIP() && this.expiredVIPDate != null && (this.expiredVIPDate >= dateToday()) || this.hasProfilAdmin() || this.hasProfilSuperAdmin();
+  }
+
+  public logoDataUrl(): string {
+    const url = this.logo;
+    return url ? URL_STOCKAGE + url : 'assets/icons/picto-user.svg';
   }
 }

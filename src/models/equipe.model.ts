@@ -426,6 +426,7 @@ export const CLUBS_FOOTBALL: any = {
   RENNES: new Equipe({ code: 'RENNES', label: 'Rennes', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/guI8eg4hoTyIp6rO1opjxA_96x96.png' }),
   ST_ETIENNE: new Equipe({ code: 'ST_ETIENNE', label: 'Saint-Etienne', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/k-EMFQteFMhhnEWVch_dBA_96x96.png' }),
   STRASBOURG: new Equipe({ code: 'STRASBOURG', label: 'Strasbourg', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/Eb9xtMpUy8FXQ0RCKvLxcg_96x96.png' }),
+  PAU_FC: new Equipe({ code: 'PAU_FC', label: 'Pau PC', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/8tjPEm0_7YNsViRVZEedmg_96x96.png' }),
 
   // LIGUE 2 FR
   SOCHAUX: new Equipe({ code: 'SOCHAUX', label: 'Sochaux', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/wWvPrYkUfTFWGg7ZAHmpPg_96x96.png' }),
@@ -443,7 +444,6 @@ export const CLUBS_FOOTBALL: any = {
   CLERMONT: new Equipe({ code: 'CLERMONT', label: 'Clermont', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/0aur9jOW37pq6dUzu61wWQ_96x96.png' }),
   GRENOBLE: new Equipe({ code: 'GRENOBLE', label: 'Grenoble', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/2v8NWuMbu3txvONnDm1jaA_96x96.png' }),
   VALENCIENNES: new Equipe({ code: 'VALENCIENNES', label: 'Valenciennes', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/hJOupTlPOOiRx3w-XMO3hg_96x96.png' }),
-  PAU_FC: new Equipe({ code: 'PAU_FC', label: 'Pau FC', codePays : 'FR', url: 'https://dimg-pa.googleapis.com/lg/CgA.png?sig=AI8nk_cT_fvF9XHLwmKH9FoQ7l3x&key=AIzaSyCUqbG5Kw_8jb3cy2ZBKvV2kAi8z0qmQO0&sk=TTGMbb7EXmY&w=96&h=96' }),
   PARIS_FC: new Equipe({ code: 'PARIS_FC', label: 'Paris FC', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/6L0HPrdS4FdFbafBX80QuQ_96x96.png' }),
   RODEZ: new Equipe({ code: 'RODEZ', label: 'Rodez', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/seB78PSR2RZcg6-Jb7snsA_96x96.png' }),
   USL_DUNKERQUE: new Equipe({ code: 'USL_DUNKERQUE', label: 'USL Dunkerque', codePays : 'FR', url: 'https://dimg-pa.googleapis.com/lg/CgA.png?sig=AI8nk_cT_fvF9XHLwmKH9FoQ7l3x&key=AIzaSyCUqbG5Kw_8jb3cy2ZBKvV2kAi8z0qmQO0&sk=TTGMbb7EXmY&w=96&h=96' }),

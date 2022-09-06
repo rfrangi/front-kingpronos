@@ -11,9 +11,6 @@ import {ChatPronosticComponent} from '../../components/chat/pronostic/chat-prono
     ChatPronosticComponent
 
   ],
-  entryComponents: [
-
-  ],
   imports: [
     ChatRoutingModule,
     CommonModule,

@@ -99,7 +99,7 @@ export class ListPaiementComponent  implements OnInit {
       clientId: 'AWzo3ULYdDSkJpnIZavvXj_G7cXf7aYJ5LXT3ONnXK5yHghIARM7d75R7wJZYCHKNAF6UHDTHxbmTtMl',
      // clientId: 'AYFLv_yjxjTz9S6eqBK_iXw9zXq4D08fqtXKegoTzNtqKhaIIofVCGtd44LiuIRs70_jD893Ys8wfXfJ',
 
-      createOrderOnClient: (data) => <ICreateOrderRequest> {
+      createOrderOnClient: () => <ICreateOrderRequest> {
         intent: 'CAPTURE',
        // intent: 'AUTHORIZE',
         purchase_units: [{
@@ -140,9 +140,9 @@ export class ListPaiementComponent  implements OnInit {
             idUser: this.tokenStorage.getUser()?.id,
             idCmdPaypal: details.id,
             statusCmdPaypal: details.status,
-            label: this.abonnement.label,
-            nbJour: this.abonnement.nbJour,
-            price: this.abonnement.price,
+            label: this.abonnements.label,
+            nbJour: this.abonnements.nbJour,
+            price: this.abonnements.price,
             creationDate: new Date()
           }*/
 
@@ -163,7 +163,7 @@ export class ListPaiementComponent  implements OnInit {
           next: (user: User) => {
             console.log(user);
             this.tokenStorage.saveUser(user);
-            this.toast.success('Votre abonnement est enregistrée');
+            this.toast.success('Votre abonnements est enregistrée');
             // this.userService.getFacture().subscribe();
             this.popinService.closeLoader();
             this.router.navigate(['home']);
@@ -226,7 +226,7 @@ export class ListPaiementComponent  implements OnInit {
                 "value": "1.00"
               },
               "quantity": "1",
-              "description": "abonnement 1 JouR ttc",
+              "description": "abonnements 1 JouR ttc",
               "category": "DIGITAL_GOODS"
             }
           ],
@@ -287,7 +287,7 @@ export class ListPaiementComponent  implements OnInit {
       next: (user: User) => {
         console.log(user);
         this.tokenStorage.saveUser(user);
-        this.toast.success('Votre abonnement est enregistrée');
+        this.toast.success('Votre abonnements est enregistrée');
        // this.userService.getFacture().subscribe();
         this.router.navigate(['home']);
       },
@@ -330,7 +330,7 @@ export class ListPaiementComponent  implements OnInit {
           "value": "1.00"
         },
         "quantity": "1",
-        "description": "abonnement 1 JouR ttc",
+        "description": "abonnements 1 JouR ttc",
         "category": "DIGITAL_GOODS"
       }
     ],

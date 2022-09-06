@@ -1,5 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { MediaMatcher } from '@angular/cdk/layout';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import { forkJoin } from 'rxjs';
@@ -22,69 +21,8 @@ import {BookmakersService} from "../../services/bookmakers.service";
 import {Bookmaker} from "../../models/bookmaker.model";
 
 @Component({
-  selector:  'home',
-  template: `
-<ul class="onglets">
-  <li [class.onglet-selected]="'PRIVE' === privacySelected"
-      (click)="changePrivacy('PRIVE')">Pronos VIP</li>
-  <li [class.onglet-selected]="'PUBLIC' === privacySelected"
-      (click)="changePrivacy('PUBLIC')">Pronos Publics</li>
-</ul>
-
-<div class="d-flex flex-row justify-content-center align-items-start flex-fill">
-<div class=" d-none d-lg-flex flex-column">
-    <user-home></user-home>
-    <reseaux-sociaux class="ms-3"
-                     [hasTitle]="false"
-                     [globalParams]="globalParams"
-                     [isHomePage]="true" *ngIf="globalParams?.hasReseaux()"></reseaux-sociaux>
-  <div class="mt-3" *ngIf="bookmakers">
-    <ng-container *ngFor="let bookmaker of bookmakers">
-        <app-details-bookmaker [bookmaker]="bookmaker"></app-details-bookmaker>
-    </ng-container>
-  </div>
-</div>
-
-<div class="d-flex flex-column align-content-center align-items-center flex-grow-1 flex-fill">
-  <list-prono [pronostics]="pronostics" class="w-100"></list-prono>
-  <div class="pagination text-center py-3"
-       *ngIf="pronostics
-       && pronostics.length > 0
-       && (tokenStorageService?.getUser()?.hasVIPValid() || privacySelected === 'PUBLIC')">
-    <button mat-button
-            color="primary"
-            name="btn-next"
-            [class.disabled]="pagination.isFirstPage"
-            (click)="showMore()">
-      Afficher plus
-    </button>
-  </div>
-</div>
-<div class="d-none d-lg-flex flex-column">
-  <mat-card class="block bg-dark ms-0" *ngIf="tokenStorageService?.isValid()">
-    <mat-card-content class="d-flex flex-column align-items-center">
-      <img class="w-25" [src]="vip.img" [alt]="vip.code"/>
-      <label class="text-white">{{getMessageVIP()}}</label>
-    </mat-card-content>
-    <button mat-button class="btn-add-vip text-white"
-            color="primary"
-            name="btn-go-to-abo"
-            (click)="goToAbonnements()"
-            *ngIf="!tokenStorageService?.getUser()?.hasProfilVIP()">
-      Devenir VIP
-    </button>
-  </mat-card>
-  <mat-card class="block bg-dark d-flex align-items-center ms-0" *ngIf="tokenStorageService?.isValid()">
-    <button mat-button
-            name="btn-valider"
-            class="btn-add-code-prono flex-grow-1 flex-fill"
-            (click)="addCodeBonus()">
-      Entrer un code bonus
-    </button>
-  </mat-card>
-</div>
-</div>
-  `,
+  selector:  'app-home',
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 
 })
