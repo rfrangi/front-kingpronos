@@ -36,7 +36,7 @@ import { Platform } from '@angular/cdk/platform';
     <section class="section-install-app-iphone" *ngIf="displayPanelApp && showInstallAppOnIphone">
       <mat-icon (click)="displayPanelApp = false">cancel</mat-icon>
       <div class="col2">
-        <img src="assets/icons/logo-transparent.png" alt="logo-install"/>
+        <img src="assets/icons/logo-512x512.png" alt="logo-install"/>
         <section>
           <label>Installer Bet Prono</label>
           <br/>
