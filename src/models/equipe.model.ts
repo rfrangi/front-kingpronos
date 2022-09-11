@@ -365,6 +365,13 @@ export const JOUEUR_TENNIS: any = {
 };
 
 export const CLUBS_FOOTBALL: any = {
+  HEARTS: new Equipe({ code: 'HEARTS', label: 'Hearts', codePays : 'EN', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/sVo6iNQioY4ATlAkwoDbUA_96x96.png' }),
+  BELGRADE: new Equipe({ code: 'BELGRADE', label: 'Belgrade', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/i26ntB7bZFvS6GkKj_gGcQ_96x96.png' }),
+  LARNACA: new Equipe({ code: 'LARNACA', label: 'AEK Larnaca', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/fnE_BlRBcId_FVzpRDbkXw_96x96.png' }),
+  LUDOGORETS: new Equipe({ code: 'LUDOGORETS', label: 'Ludogorets', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/MF7-Xe1ZaOzHqWIWqsTQbA_96x96.png' }),
+  AJAX: new Equipe({ code: 'AJAX', label: 'Ajax', codePays : '', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/WIAAdPpdzFwVKU7maFvJ6w_96x96.png' }),
+
+
   // Autralie
   RB_SALZBURG: new Equipe({ code: 'RB_SALZBURG', label: 'RB Salzburg', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/vQhr4NoE_4Yg1IhUZvbRNw_96x96.png' }),
   RAPID_VIENNE: new Equipe({ code: 'RAPID_VIENNE', label: 'Rapid Vienne', codePays : 'FR', url: 'https://ssl.gstatic.com/onebox/media/sports/logos/ksn7E1QWsnoXRq7vOZkBEA_96x96.png' }),
